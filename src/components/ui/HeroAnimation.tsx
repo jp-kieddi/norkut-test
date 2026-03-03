@@ -95,7 +95,7 @@ export default function HeroAnimation() {
                             alt="Norkut App"
                             className="absolute object-contain w-[85%] h-auto rounded-xl drop-shadow-2xl"
                             animate={{ y: [0, 5, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                         />
 
                         {/* Animated Boxes */}
@@ -105,7 +105,7 @@ export default function HeroAnimation() {
                                 className={`absolute ${box.position} px-4 py-3 rounded-2xl shadow-xl border border-zinc-100/50 flex items-center gap-3 w-max max-w-[200px] md:max-w-xs z-10 backdrop-blur-md bg-white/90`}
                                 initial={{ opacity: 0, y: 20, scale: 1.3 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{ delay: 1.5 + idx * 0.15, duration: 0.5, type: "spring", stiffness: 100 }}
+
                                 exit={{ opacity: 0, y: 20, scale: 0.3 }}
                             >
                                 <div className="p-2 bg-orange-50 rounded-lg shrink-0">
@@ -123,9 +123,9 @@ export default function HeroAnimation() {
                     <motion.div
                         key="step1"
                         className="absolute inset-0 flex items-center justify-center text-center px-4"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -30 }}
+                        initial={{ opacity: 0, scale: 0.3, filter: 'blur(10px)' }}
+                        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                        exit={{ opacity: 0, scale: 1.3, filter: 'blur(10px)' }}
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground max-w-3xl leading-tight">
