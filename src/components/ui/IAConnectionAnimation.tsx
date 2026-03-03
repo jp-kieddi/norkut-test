@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BrainCircuit, Activity, Wallet, Store, TrendingUp, Users, LayoutDashboard } from 'lucide-react';
+import { Activity, Wallet, Store, TrendingUp, Users, LayoutDashboard } from 'lucide-react';
 import Logo from '../Logo';
 
 export default function IAConnectionAnimation() {
