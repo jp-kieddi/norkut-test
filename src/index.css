@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0, 0%, 100%);
+  --color-foreground: hsl(222.2, 84%, 4.9%);
+  --color-primary: hsl(24.6, 95%, 53.1%);
+  --color-primary-foreground: hsl(210, 40%, 98%);
+
+  --color-muted: hsl(210, 40%, 96.1%);
+  --color-muted-foreground: hsl(215.4, 16.3%, 46.9%);
+
+  --color-border: hsl(214.3, 31.8%, 91.4%);
+
+  --animate-fly-arrow: fly-arrow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fly-arrow {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  45% {
+    transform: translateX(40px) scale(0.9);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-40px) scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
