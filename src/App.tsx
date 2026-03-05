@@ -5,6 +5,7 @@ import Features from './components/Features';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function Home() {
   return (
@@ -27,8 +28,9 @@ function PricingPage() {
 function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
+      <ScrollToTop />
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/precios" element={<PricingPage />} />

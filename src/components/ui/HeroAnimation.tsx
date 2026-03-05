@@ -78,7 +78,7 @@ export default function HeroAnimation() {
     };
 
     return (
-        <div className="bg-white relative w-full max-w-5xl mx-auto h-[450px] md:h-[600px] flex items-center justify-center cursor-pointer border-1 border-gray-100 hover:border-orange-400 rounded-4xl shadow-md hover:shadow-2xl transition-shadow duration-300" onClick={handleOpenVideo}>
+        <div className="bg-white relative w-full max-w-5xl mx-auto h-[450px] md:h-[600px] flex items-center justify-center cursor-pointer border border-gray-100 hover:border-orange-400 rounded-4xl shadow-md hover:shadow-2xl transition-shadow duration-300" onClick={handleOpenVideo}>
             <AnimatePresence mode="wait">
                 {step === 0 && (
                     <motion.div
@@ -203,7 +203,7 @@ export default function HeroAnimation() {
             <AnimatePresence>
                 {isVideoOpen && (
                     <motion.div
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-black/80 backdrop-blur-sm cursor-default"
+                        className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10 bg-black/80 backdrop-blur-sm cursor-default"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
