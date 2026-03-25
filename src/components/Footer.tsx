@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Youtube, MessageCircle, Facebook } from 'lucide-react';
 import Logo from './Logo';
 
 const footerNavs = [
@@ -31,38 +31,29 @@ const footerNavs = [
 
 export default function Footer() {
     return (
-        <footer className="bg-zinc-50 relative">
-            {/* Color divider top */}
-            <div className="absolute top-0 left-0 right-0 h-[10px] flex w-full drop-shadow-md">
-                <div className="flex-1 bg-[#8ECAE6]"></div>
-                <div className="flex-1 bg-[#219EBC]"></div>
-                <div className="flex-1 bg-[#023047]"></div>
-                <div className="flex-1 bg-[#FFB703]"></div>
-                <div className="flex-1 bg-[#FB8500]"></div>
-            </div>
-
+        <footer className="bg-[#110c22] relative border-t border-[#1E1B29]">
             <div className="pt-24 pb-8 container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 md:gap-8">
                     {/* Brand Col */}
                     <div className="lg:col-span-2 space-y-6">
-                        <div className="text-zinc-900 w-32 mb-4">
-                            <Logo className="h-12 w-auto" />
+                        <div className="text-white w-32 mb-4">
+                            <Logo className="h-8 w-auto text-white" />
                         </div>
-                        <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
+                        <p className="text-[#9E9BAE] text-xs max-w-xs leading-relaxed">
                             La plataforma que centraliza la complejidad operativa en la gestión de inventario de tu negocio.
                         </p>
-                        <div className="flex items-center gap-4 pt-2 drop-shadow-md">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:text-[#F97A22] hover:border-[#F97A22] transition-colors shadow-sm">
-                                <Instagram size={18} />
+                        <div className="flex items-center gap-4 pt-2">
+                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
+                                <Youtube size={14} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:text-[#F97A22] hover:border-[#F97A22] transition-colors shadow-sm">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
+                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
+                                <MessageCircle size={14} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:text-[#F97A22] hover:border-[#F97A22] transition-colors shadow-sm">
-                                <Twitter size={18} />
+                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
+                                <Facebook size={14} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:text-[#F97A22] hover:border-[#F97A22] transition-colors shadow-sm">
-                                <Youtube size={18} />
+                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
+                                <Instagram size={14} />
                             </a>
                         </div>
                     </div>
@@ -71,13 +62,13 @@ export default function Footer() {
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:col-span-3 gap-8 sm:gap-12 pl-0 lg:pl-12">
                         {footerNavs.map((navItem, idx) => (
                             <div key={idx} className="space-y-4">
-                                <h4 className="text-base font-semibold text-foreground mb-4 opacity-90">
+                                <h4 className="text-base font-semibold text-[#F97A22] mb-6">
                                     {navItem.label}
                                 </h4>
-                                <ul className="space-y-3">
+                                <ul className="space-y-4">
                                     {navItem.items.map((item, idxx) => (
                                         <li key={idxx}>
-                                            <a href={item.href} className="text-sm font-medium text-muted-foreground hover:text-[#F97A22] transition-colors block">
+                                            <a href={item.href} className="text-xs font-medium text-[#9E9BAE] hover:text-white transition-colors block">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -88,17 +79,18 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-16 pt-8 border-t border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-[13px] text-muted-foreground font-medium">
-                        © {new Date().getFullYear()} Norkut. Todos los derechos reservados.
+                <div className="mt-16 pt-8 border-t border-[#1E1B29] grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-center md:text-left">
+                    <p className="text-[11px] text-[#9E9BAE] font-medium">
+                        © {new Date().getFullYear()} Norkut
                     </p>
-                    <div className="flex items-center gap-6 text-[13px] font-medium text-muted-foreground">
-                        <a href="#" className="hover:text-[#F97A22] transition-colors">Términos y condiciones</a>
-                        <div className="w-1 h-1 rounded-full bg-zinc-300"></div>
-                        <a href="#" className="hover:text-[#F97A22] transition-colors">Políticas de privacidad</a>
+                    <div className="text-[11px] text-[#9E9BAE] font-medium md:text-center">
+                        <a href="#" className="hover:text-white transition-colors">Política de privacidad</a>
+                    </div>
+                    <div className="text-[11px] text-[#9E9BAE] font-medium md:text-right">
+                        <a href="#" className="hover:text-white transition-colors">Términos de servicio</a>
                     </div>
                 </div>
             </div>
         </footer>
-    )
+    );
 }

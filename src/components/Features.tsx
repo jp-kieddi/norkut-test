@@ -1,42 +1,41 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { BrainCircuit, Grid3x3, Activity, ShoppingCart, Wallet, Megaphone, Store, Network, ArrowRight } from 'lucide-react';
+import { BrainCircuit, CreditCard, ShoppingCart, Wallet, Megaphone, Store, Network, ArrowRight } from 'lucide-react';
 import posMachineImg from '../assets/pos-machine.png';
 import IAConnectionAnimation from './ui/IAConnectionAnimation';
+import CTAButton from './ui/CTAButton';
 const coreFeatures = [
     {
-        icon: <ShoppingCart className="w-6 h-6 text-primary" />,
+        icon: ShoppingCart,
         title: 'Operaciones y Abastecimiento',
         description: 'Control inteligente y flujos que escalan con tu negocio.',
     },
     {
-        icon: <Activity className="w-6 h-6 text-primary" />,
+        icon: CreditCard,
         title: 'Venta y POS',
         description: 'Transacciones ágiles, seguras y conectadas en todos los canales.',
     },
     {
-        icon: <Wallet className="w-6 h-6 text-primary" />,
+        icon: Wallet,
         title: 'Finanzas & Administración',
         description: 'Integra ingresos, costos y usuarios en un marco de gobierno claro.',
     },
     {
-        icon: <Megaphone className="w-6 h-6 text-primary" />,
+        icon: Megaphone,
         title: 'Marketing & Clientes',
         description: 'Segmentación, activación y medición en un solo flujo.',
     },
     {
-        icon: <Store className="w-6 h-6 text-primary" />,
+        icon: Store,
         title: 'Gestión de puntos de venta',
         description: 'Estandarización operativa en una sola plataforma.',
     },
     {
-        icon: <Network className="w-6 h-6 text-primary" />,
+        icon: Network,
         title: 'Franquicias & Holdings',
         description: 'Gobierno corporativo y control central para redes multi-tenant.',
     },
 ];
-
-import CTAButton from './ui/CTAButton';
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
     const ref = useRef(null);
@@ -56,120 +55,118 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: nu
 
 export default function Features() {
     return (
-        <section id="features" className="pt-24 md:pt-20 bg-zinc-50 relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-6">
+        <>
+            <section id="features" className="pt-24 md:pt-0 bg-zinc-50 relative overflow-hidden">
+                <div className="container mx-auto px-4 md:px-6">
 
-                {/* IA Section */}
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32">
-                    <FadeIn>
-                        <div className="w-16 h-16 rounded-2xl bg-white border border-zinc-200 shadow-sm flex items-center justify-center mb-6">
-                            <BrainCircuit className="w-8 h-8 text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6 leading-tight">
-                            Una IA que potencia tu operación comercial
-                        </h2>
-                        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                            La inteligencia artificial de Norkut aprende del comportamiento real de tus ventas, inventario y clientes. Anticipa quiebres, sobrestocks y descubre oportunidades de mejora para tomar decisiones estratégicas a tiempo.
-                        </p>
-                        <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
-                            <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-primary"></div>
-                                Anticipate a los hechos
-                            </h4>
-                            <p className="text-sm text-muted-foreground">
-                                Decide antes que el resto, automatiza lo repetitivo y haz que cada punto de venta funcione con precisión desde una sola plataforma.
+
+                    {/* IA Section */}
+                    <div className="flex flex-col text-center mt-32 mb-48 lg:mb-72">
+                        <FadeIn>
+                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight max-w-4xl mx-auto">
+                                Una IA que potencia tu operación comercial
+                            </h2>
+                            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
+                                La inteligencia artificial de Norkut aprende del comportamiento real de tus ventas, inventario y clientes. Anticipa quiebres, sobrestocks y descubre oportunidades de mejora para tomar decisiones estratégicas a tiempo.
                             </p>
-                        </div>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <IAConnectionAnimation />
-                    </FadeIn>
-                </div>
+                            <div className="flex justify-center mb-24 md:mb-12">
+                                <CTAButton>
+                                    Conocer más
+                                </CTAButton>
+                            </div>
+                        </FadeIn>
 
-                {/* Multipoint POS Section */}
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32 lg:flex-row-reverse">
-                    <FadeIn>
-                        <div className="w-16 h-16 rounded-2xl bg-white border border-zinc-200 shadow-sm flex items-center justify-center mb-6">
-                            <Grid3x3 className="w-8 h-8 text-primary" />
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6 leading-tight">
-                            Puntos de venta: decisiones basadas en hechos reales
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            La IA de Norkut aprende de los movimientos de stock de todos tus puntos de venta para encontrar oportunidades de mejora, detectando stock inmovilizado, productos ganadores y mucho más.
-                        </p>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <div className="relative w-full max-w-2xl mx-auto lg:mx-0">
-                            <img
-                                src={posMachineImg}
-                                alt="Norkut POS Machine"
-                                className="w-full h-auto drop-shadow-2xl object-contain scale-110 hover:scale-115 transition-transform duration-500"
+                        <FadeIn delay={0.2}>
+                            {/* Wrapper with significant bottom margin to offset the transform scale overlap */}
+                            <div className="w-full flex justify-center scale-[1.2] sm:scale-[1.5] origin-top mb-10 sm:mb-10 px-4">
+                                <IAConnectionAnimation />
+                            </div>
+                        </FadeIn>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+            {/* Seamless CTA Section joining FAQ */}
+            <section className="bg-[#110c22] relative overflow-hidden text-white pt-32 pb-0 md:pt-48 min-h-[400px] md:min-h-[600px] lg:min-h-[600px] flex flex-col justify-center">
+                {/* Highly Refined Animated Glowing Bars Background */}
+                <div className="absolute inset-0 pointer-events-none">
+                    {[
+                        { left: '8%', maxH: '50%', w: '45px', duration: 12, delay: 6 },
+                        { left: '15%', maxH: '60%', w: '40px', duration: 8, delay: 0 },
+                        { left: '26%', maxH: '65%', w: '30px', duration: 10, delay: 2 },
+                        { left: '40%', maxH: '45%', w: '30px', duration: 11, delay: 3 },
+                        { left: '56%', maxH: '58%', w: '35px', duration: 9, delay: 7 },
+                        { left: '68%', maxH: '70%', w: '50px', duration: 9, delay: 1.5 },
+                        { left: '80%', maxH: '48%', w: '40px', duration: 13, delay: 8 },
+                        { left: '88%', maxH: '55%', w: '35px', duration: 10, delay: 4.5 },
+                    ].map((bar, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute bottom-0 flex justify-center"
+                            style={{ left: bar.left, width: bar.w }}
+                            animate={{
+                                height: ['0%', bar.maxH, bar.maxH],
+                            }}
+                            transition={{
+                                duration: bar.duration,
+                                times: [0, 0.4, 1],
+                                ease: ["easeOut", "linear"],
+                                repeat: Infinity,
+                                delay: bar.delay
+                            }}
+                        >
+                            {/* Fading Pillar (Trail) */}
+                            <motion.div
+                                className="absolute inset-x-0 bottom-0 top-0 bg-linear-to-t from-transparent via-[#2b1b54]/50 to-[#4c3185]/70 rounded-t-full"
+                                animate={{ opacity: [0, 1, 1, 0, 0] }}
+                                transition={{
+                                    duration: bar.duration,
+                                    times: [0, 0.05, 0.5, 0.7, 1],
+                                    ease: "easeInOut",
+                                    repeat: Infinity,
+                                    delay: bar.delay
+                                }}
                             />
-                        </div>
-                    </FadeIn>
+
+                            {/* Soft Glowing Orb (Inside the top of trail) */}
+                            <motion.div
+                                className="absolute top-0 flex items-center justify-center w-full aspect-square"
+                                animate={{ opacity: [0, 1, 1, 0, 0] }}
+                                transition={{
+                                    duration: bar.duration,
+                                    times: [0, 0.05, 0.4, 0.55, 1],
+                                    ease: "easeInOut",
+                                    repeat: Infinity,
+                                    delay: bar.delay
+                                }}
+                            >
+                                <div className="absolute w-full aspect-square bg-[#3b3066] rounded-full blur-md shrink-0 pointer-events-none opacity-80" />
+                                <div className="absolute w-[80%] aspect-square bg-[#5a4ba6] rounded-full blur-[2px] shrink-0 pointer-events-none" />
+                            </motion.div>
+                        </motion.div>
+                    ))}
                 </div>
 
-                {/* Modules Grid */}
-                <div className="mb-32">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-                            Una app, múltiples funcionalidades
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Porque el éxito y la sostenibilidad de tu comercio dependen de tomar las decisiones correctas, todos los días.
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {coreFeatures.map((feature, idx) => {
-                            let initialProps = {};
-                            if (idx % 3 === 0) initialProps = { opacity: 0, x: -70 };
-                            else if (idx % 3 === 1) initialProps = { opacity: 0, scale: 0.8 };
-                            else initialProps = { opacity: 0, x: 70 };
+                {/* Bottom gradient mask so it blends perfectly with FAQ */}
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#110c22] to-transparent pointer-events-none" />
 
-                            return (
-                                <motion.div
-                                    key={idx}
-                                    initial={initialProps}
-                                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                    transition={{ duration: 0.6, ease: "easeOut" }}
-                                    className="bg-white p-8 rounded-3xl border border-zinc-200 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 h-full flex flex-col group cursor-pointer"
-                                >
-                                    <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                        {feature.icon}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">{feature.description}</p>
-
-                                    <div className="mt-auto flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                                        Explorar <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
+                {/* CTA Content */}
+                <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center pb-32 md:pb-28 mt-auto mb-auto">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 max-w-3xl text-white">
+                        Empieza a usar Norkut ahora
+                    </h2>
+                    <p className="text-[#9E9BAE] text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
+                        Únete a más de 1000 negocios que ya confían en Norkut para gestionar su inventario. Sin tarjeta de crédito requerida.
+                    </p>
+                    <CTAButton>
+                        Empieza gratis hoy
+                    </CTAButton>
                 </div>
-
-                {/* CTA Section */}
-                <div className="bg-[#101828] rounded-3xl overflow-hidden relative text-white">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-color-burn"></div>
-                    <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px]"></div>
-
-                    <div className="relative z-10 p-10 md:p-16 lg:p-20 text-center flex flex-col items-center justify-center">
-                        <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-6 max-w-2xl">
-                            Empieza a usar Norkut sin costo ahora
-                        </h2>
-                        <p className="text-zinc-400 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
-                            Únete ahora y descubre cómo nuestra inteligencia artificial puede transformar y organizar  operatividad de tu comercio.
-                        </p>
-                        <CTAButton>
-                            Empezar gratis
-                        </CTAButton>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+            </section>
+        </>
     );
 }

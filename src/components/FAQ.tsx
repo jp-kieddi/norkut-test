@@ -34,71 +34,78 @@ const faqs = [
 ];
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
-        <section className="py-20 bg-zinc-50 relative">
-            <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-                    <div className="lg:col-span-5 flex flex-col justify-center text-left">
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-                            Preguntas frecuentes
-                        </h2>
-                        <p className="text-lg text-muted-foreground">
-                            Todo lo que necesitas saber sobre cómo Norkut transforma tu operación comercial.
-                        </p>
-                    </div>
+        <section className="py-20 lg:py-32 bg-[#110c22] relative">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="bg-[#1C1A27] border border-[#2C293F] rounded-[32px] p-8 lg:p-16">
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+                        {/* Header Left */}
+                        <div className="lg:col-span-5 flex flex-col justify-start text-left pt-2">
+                            <span className="text-[#F97A22] font-semibold text-sm mb-4">¿Aún tienes dudas?</span>
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                                Preguntas frecuentes
+                            </h2>
+                            <p className="text-[#9E9BAE] text-base md:text-lg leading-relaxed max-w-sm">
+                                Todo lo que necesitas saber sobre cómo Norkut transforma tu operación comercial.
+                            </p>
+                        </div>
 
-                    <div className="lg:col-span-7 space-y-2">
-                        {faqs.map((faq, index) => {
-                            const isOpen = openIndex === index;
-                            return (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'border-primary/50 bg-orange-50/50' : 'border-zinc-200 bg-white hover:border-zinc-300'}`}
-                                >
-                                    <button
-                                        onClick={() => toggleFAQ(index)}
-                                        className="w-full flex items-center justify-between px-6 py-2 text-left focus:outline-none"
+                        {/* Accordion Right */}
+                        <div className="lg:col-span-7 space-y-3">
+                            {faqs.map((faq, index) => {
+                                const isOpen = openIndex === index;
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 15 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                                        className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'border-[#F97A22] bg-transparent' : 'border-[#2C293F] bg-transparent hover:border-[#3D3A50]'}`}
                                     >
-                                        <span className="text-base md:text-md font-semibold text-zinc-900 pr-8">
-                                            {faq.question}
-                                        </span>
-                                        <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-primary text-white' : 'bg-zinc-100 text-zinc-500'}`}>
-                                            <motion.div
-                                                animate={{ rotate: isOpen ? 180 : 0 }}
-                                                transition={{ duration: 0.3 }}
-                                            >
-                                                <ChevronDown className="w-5 h-5" />
-                                            </motion.div>
-                                        </div>
-                                    </button>
-
-                                    <AnimatePresence>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: 'auto', opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                                            >
-                                                <div className="px-6 pb-4 text-sm md:text-base text-zinc-600 leading-relaxed">
-                                                    {faq.answer}
+                                        <button
+                                            onClick={() => toggleFAQ(index)}
+                                            className="w-full flex items-center justify-between px-6 py-4 text-left focus:outline-none"
+                                        >
+                                            <span className={`text-sm md:text-base font-semibold pr-8 ${isOpen ? 'text-[#F97A22]' : 'text-[#D4D2DF]'}`}>
+                                                {faq.question}
+                                            </span>
+                                            
+                                            {isOpen ? (
+                                                <div className="shrink-0 w-7 h-7 rounded-full bg-[#F97A22] text-white flex items-center justify-center">
+                                                    <ChevronDown className="w-4 h-4 rotate-180" />
                                                 </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </motion.div>
-                            );
-                        })}
+                                            ) : (
+                                                <div className="shrink-0 text-[#6A6680] flex items-center justify-center">
+                                                    <ChevronDown className="w-5 h-5" />
+                                                </div>
+                                            )}
+                                        </button>
+
+                                        <AnimatePresence>
+                                            {isOpen && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: 'auto', opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                                >
+                                                    <div className="px-6 pb-5 text-sm md:text-base text-[#9E9BAE] leading-relaxed pr-12">
+                                                        {faq.answer}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

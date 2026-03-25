@@ -3,13 +3,13 @@ import { Activity, Wallet, Store, TrendingUp, Users, LayoutDashboard } from 'luc
 import Logo from '../Logo';
 
 export default function IAConnectionAnimation() {
-    const paths = [
-        "M 40 50 L 100 50 L 100 130 L 140 130",   // L1
-        "M 40 150 L 140 150",                     // L2
-        "M 40 250 L 100 250 L 100 170 L 140 170", // L3
-        "M 360 50 L 300 50 L 300 130 L 260 130",  // R1
-        "M 360 150 L 260 150",                    // R2
-        "M 360 250 L 300 250 L 300 170 L 260 170" // R3
+    const nodes = [
+        { Icon: Activity, top: '16.6%', left: '10%', path: "M 40 50 L 100 50 L 100 130 L 140 130", delay: 0.2, duration: 3.1 },
+        { Icon: Store, top: '50%', left: '10%', path: "M 40 150 L 140 150", delay: 1.7, duration: 2.4 },
+        { Icon: Wallet, top: '83.3%', left: '10%', path: "M 40 250 L 100 250 L 100 170 L 140 170", delay: 0.8, duration: 3.5 },
+        { Icon: TrendingUp, top: '16.6%', left: '90%', path: "M 360 50 L 300 50 L 300 130 L 260 130", delay: 2.3, duration: 2.7 },
+        { Icon: Users, top: '50%', left: '90%', path: "M 360 150 L 260 150", delay: 0.4, duration: 2.9 },
+        { Icon: LayoutDashboard, top: '83.3%', left: '90%', path: "M 360 250 L 300 250 L 300 170 L 260 170", delay: 1.4, duration: 3.2 }
     ];
 
     return (
@@ -17,33 +17,33 @@ export default function IAConnectionAnimation() {
             {/* SVG Lines */}
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="none">
                 <defs>
-                    <linearGradient id="glow-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#f56e0f" stopOpacity="0" />
-                        <stop offset="50%" stopColor="#ff801f" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#f56e0f" stopOpacity="0" />
-                    </linearGradient>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
                 </defs>
 
-                {paths.map((d, i) => (
-                    <g key={i}>
-                        <path d={d} fill="none" stroke="#e4e4e7" strokeWidth="2" strokeLinejoin="round" />
+                {nodes.map((node, i) => (
+                    <g key={`path-${i}`}>
+                        <path d={node.path} fill="none" stroke="#e4e4e7" strokeWidth="2" strokeLinejoin="round" />
                         <motion.path
-                            d={d}
+                            d={node.path}
                             fill="none"
-                            stroke="url(#glow-line)"
-                            strokeWidth="4"
+                            stroke="#ff801f"
+                            strokeWidth="3"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            initial={{ pathLength: 0.15, pathOffset: 0, opacity: 0 }}
+                            filter="url(#glow)"
+                            initial={{ pathLength: 0.2, pathOffset: 0, opacity: 0 }}
                             animate={{
                                 pathOffset: [0, 1],
                                 opacity: [0, 1, 1, 0]
                             }}
                             transition={{
-                                duration: 3.6,
+                                duration: node.duration,
                                 repeat: Infinity,
-                                ease: "linear",
-                                delay: i * 0.2
+                                ease: "easeInOut",
+                                delay: node.delay
                             }}
                         />
                     </g>
@@ -51,42 +51,30 @@ export default function IAConnectionAnimation() {
             </svg>
 
             {/* Nodes */}
-            <div className="absolute left-[10%] top-[16.6%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <Activity className="w-5 h-5 text-zinc-500" />
-            </div>
-            <div className="absolute left-[10%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <Store className="w-5 h-5 text-zinc-500" />
-            </div>
-            <div className="absolute left-[10%] top-[83.3%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <Wallet className="w-5 h-5 text-zinc-500" />
-            </div>
-            <div className="absolute left-[90%] top-[16.6%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <TrendingUp className="w-5 h-5 text-zinc-500" />
-            </div>
-            <div className="absolute left-[90%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <Users className="w-5 h-5 text-zinc-500" />
-            </div>
-            <div className="absolute left-[90%] top-[83.3%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform">
-                <LayoutDashboard className="w-5 h-5 text-zinc-500" />
-            </div>
+            {nodes.map((node, i) => (
+                <div 
+                    key={`node-${i}`} 
+                    className="absolute w-12 h-12 bg-white border border-zinc-200 shadow-md rounded-xl flex items-center justify-center z-10 hover:scale-110 transition-transform"
+                    style={{ top: node.top, left: node.left, transform: 'translate(-50%, -50%)' }}
+                >
+                    <motion.div
+                        animate={{ color: ["#71717a", "#f97a22", "#f97a22", "#71717a"] }}
+                        transition={{
+                            duration: node.duration,
+                            repeat: Infinity,
+                            ease: "linear",
+                            times: [0, 0.1, 0.4, 0.6],
+                            delay: node.delay
+                        }}
+                    >
+                        <node.Icon className="w-5 h-5" color="currentColor" />
+                    </motion.div>
+                </div>
+            ))}
 
             {/* Center Node */}
             <motion.div
-                className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 bg-linear-to-r from-[#ccc] to-[#a1a1a1] rounded-xl flex flex-col items-center justify-center z-20 border border-orange-500/30 overflow-hidden"
-                animate={{
-                    scale: [1, 1.04, 1],
-                    boxShadow: [
-                        "0 0 0px rgba(255,128,31,0)",
-                        "0 0 40px rgba(255,128,31,0.8)",
-                        "0 0 0px rgba(255,128,31,0)"
-                    ]
-                }}
-                transition={{
-                    duration: 1.4,
-                    repeat: Infinity,
-                    times: [0, 0.1, 1],
-                    ease: "easeOut"
-                }}
+                className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 bg-linear-to-r from-[#ccc] to-[#a1a1a1] rounded-xl flex flex-col items-center justify-center z-20 border border-orange-500/30 overflow-hidden shadow-xl"
             >
                 <div className="absolute inset-0 bg-white/10 blur-xl rounded-full scale-110 pointer-events-none"></div>
 

@@ -14,13 +14,13 @@ export default function CTAButton({
         <button
             onClick={onClick}
             className={cn(
-                "group relative inline-flex items-center gap-4 rounded-full overflow-hidden bg-linear-to-r from-[#ff801f] to-[#f56e0f] py-1.5 pl-6 pr-1.5 font-semibold text-white transition-all duration-300 hover:shadow-[0_8px_20px_-6px_rgba(255,128,31,0.6)] hover:-translate-y-0.5 hover:brightness-95 active:scale-[0.98] active:translate-y-0 active:shadow-none",
+                "group flex items-center justify-between gap-3 bg-[#F97A22] text-white pl-6 pr-1.5 h-[48px] rounded-full font-semibold shadow-[0_8px_20px_-6px_rgba(249,122,34,0.6)] hover:bg-[#ff8a3d] hover:shadow-[0_10px_25px_-6px_rgba(249,122,34,0.7)] transition-all shrink-0",
                 className
             )}
         >
-            <span className="relative z-10 text-sm font-bold tracking-wide">{children}</span>
-            <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#ff801f] shadow-sm group-hover:animate-fly-arrow">
-                <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
+            <span className="text-[15.5px] whitespace-nowrap">{children}</span>
+            <div className="bg-white w-[36px] h-[36px] rounded-full flex items-center justify-center transform group-hover:translate-x-[2px] transition-transform shrink-0">
+                <ArrowRight className="w-[18px] h-[18px] text-[#F97A22]" strokeWidth={2.5} />
             </div>
         </button>
     );

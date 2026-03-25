@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import Logo from './Logo';
 import CTAButton from './ui/CTAButton';
 
@@ -14,19 +14,31 @@ const navLinks = [
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
+        
+        // Init dark mode state
+        if (document.documentElement.classList.contains('dark')) {
+            setIsDarkMode(true);
+        }
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const toggleDarkMode = () => {
+        document.documentElement.classList.toggle('dark');
+        setIsDarkMode(!isDarkMode);
+    };
 
     return (
         <header
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-white/80 backdrop-blur-md shadow-sm py-3'
+                ? 'bg-white/90 dark:bg-[#110c22]/90 backdrop-blur-md shadow-sm py-3'
                 : 'bg-transparent py-5'
                 }`}
         >
@@ -48,10 +60,35 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
+                        
+                        {/* Dark Mode Toggle */}
+                        <button 
+                            onClick={toggleDarkMode}
+                            className="p-2 rounded-full hover:bg-orange-50 dark:hover:bg-white/10 text-zinc-500 dark:text-zinc-400 hover:text-[#F97A22] dark:hover:text-[#F97A22] transition-colors"
+                            aria-label="Toggle Dark Mode"
+                        >
+                            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                        </button>
                     </nav>
 
-                    <div className="hidden md:flex flex-col items-center pl-6">
-                        <CTAButton className="py-1 pl-4 pr-1 text-base">
+                    {/* Right Utilities + CTA */}
+                    <div className="hidden md:flex items-center gap-4 pl-6">
+                        {/* Country Selector */}
+                        <div className="relative group flex items-center h-[46px]">
+                            <select 
+                                defaultValue="ve"
+                                className="appearance-none h-full rounded-full px-4 pr-10 text-[15px] font-medium outline-none hover:border-[#F97A22] transition-colors cursor-pointer shadow-sm bg-white text-zinc-700 border border-zinc-200 dark:bg-[#1C1A1E] dark:border-[#312b3e] dark:text-zinc-200 dark:hover:border-[#F97A22]"
+                                style={{ colorScheme: 'light' }}
+                            >
+                                <option value="ve">🇻🇪 VE</option>
+                                <option value="ar">🇦🇷 AR</option>
+                            </select>
+                            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                        </div>
+
+                        <CTAButton className="h-[46px]">
                             Empieza gratis
                         </CTAButton>
                     </div>
@@ -81,9 +118,9 @@ export default function Navbar() {
                     ))}
                     <div className="h-px bg-gray-100 my-4 mx-4"></div>
                     <div className="flex flex-col gap-3 px-4 pb-4">
-                        <button className="bg-primary text-white py-3 rounded-xl font-semibold text-center w-full">
+                        <CTAButton className="w-full">
                             Empieza gratis
-                        </button>
+                        </CTAButton>
                     </div>
                 </div>
             )}

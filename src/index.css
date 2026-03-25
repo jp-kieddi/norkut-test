@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
 
 @theme {
   --color-background: hsl(0, 0%, 100%);
@@ -12,6 +14,7 @@
   --color-border: hsl(214.3, 31.8%, 91.4%);
 
   --animate-fly-arrow: fly-arrow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --width-container: 1000px;
 }
 
 @keyframes fly-arrow {
@@ -41,11 +44,92 @@
     scroll-behavior: smooth;
   }
 
+
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global Dark Mode Overrides */
+  .dark body,
+  .dark #root,
+  .dark main {
+    background-color: #110c22 !important;
+    color: #f4f4f5 !important;
+  }
+
+  .dark .bg-zinc-50 {
+    background-color: #110c22 !important;
+  }
+
+  /* Cards and panels (scoped — exclude header, select, nav) */
+  .dark section .bg-white,
+  .dark .feature-card.bg-white {
+    background-color: #1C1A1E !important;
+    border-color: #312b3e !important;
+  }
+
+  /* Text overrides */
+  .dark .text-foreground,
+  .dark .text-zinc-900,
+  .dark .text-zinc-800,
+  .dark .text-slate-900 {
+    color: #ffffff !important;
+  }
+
+  .dark .text-muted-foreground,
+  .dark .text-zinc-500,
+  .dark .text-zinc-600 {
+    color: #a1a1aa !important;
+  }
+
+  .dark .bg-zinc-100,
+  .dark .bg-zinc-200,
+  .dark .bg-gray-100 {
+    background-color: #2b2538 !important;
+  }
+
+  /* Hero section: solid dark background, keep animation untouched */
+  .dark .hero-section {
+    background: #110c22 !important;
+  }
+
+  .dark .hero-section .hero-orb {
+    opacity: 0 !important;
+  }
+
+  /* Protect hero animation from dark mode color changes */
+  .dark .hero-dashboard .bg-white,
+  .dark .hero-dashboard .bg-\[\#f4f4f5\] {
+    background-color: white !important;
+    border-color: inherit !important;
+  }
+
+  .dark .hero-dashboard .text-zinc-900 {
+    color: #18181b !important;
+  }
+
+  .dark .hero-dashboard .text-zinc-500,
+  .dark .hero-dashboard .text-zinc-600,
+  .dark .hero-dashboard .text-muted-foreground,
+  .dark .hero-dashboard .text-zinc-400 {
+    color: #71717a !important;
+  }
+
+  .dark .hero-dashboard .bg-zinc-50 {
+    background-color: #fafafa !important;
+  }
+
+  .dark .hero-dashboard .bg-zinc-100 {
+    background-color: #f4f4f5 !important;
+  }
+
+  /* Video section: dark background */
+  .dark .video-section {
+    background: #110c22 !important;
   }
 }
