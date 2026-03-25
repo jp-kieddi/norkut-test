@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, ShoppingCart, Activity, Wallet, Megaphone, Store, Network } from 'lucide-react';
-import CTAButton from './CTAButton';
 import appScreenshot from '../../assets/app-dashboard.png';
 import IAConnectionAnimation from './IAConnectionAnimation';
 

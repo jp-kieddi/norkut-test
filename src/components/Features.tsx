@@ -1,41 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { BrainCircuit, CreditCard, ShoppingCart, Wallet, Megaphone, Store, Network, ArrowRight } from 'lucide-react';
-import posMachineImg from '../assets/pos-machine.png';
+
 import IAConnectionAnimation from './ui/IAConnectionAnimation';
 import CTAButton from './ui/CTAButton';
-const coreFeatures = [
-    {
-        icon: ShoppingCart,
-        title: 'Operaciones y Abastecimiento',
-        description: 'Control inteligente y flujos que escalan con tu negocio.',
-    },
-    {
-        icon: CreditCard,
-        title: 'Venta y POS',
-        description: 'Transacciones ágiles, seguras y conectadas en todos los canales.',
-    },
-    {
-        icon: Wallet,
-        title: 'Finanzas & Administración',
-        description: 'Integra ingresos, costos y usuarios en un marco de gobierno claro.',
-    },
-    {
-        icon: Megaphone,
-        title: 'Marketing & Clientes',
-        description: 'Segmentación, activación y medición en un solo flujo.',
-    },
-    {
-        icon: Store,
-        title: 'Gestión de puntos de venta',
-        description: 'Estandarización operativa en una sola plataforma.',
-    },
-    {
-        icon: Network,
-        title: 'Franquicias & Holdings',
-        description: 'Gobierno corporativo y control central para redes multi-tenant.',
-    },
-];
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
     const ref = useRef(null);
