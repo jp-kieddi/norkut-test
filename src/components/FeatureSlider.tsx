@@ -300,7 +300,7 @@ const featuresData = [
 export default function FeatureSlider() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isHoveringSlide, setIsHoveringSlide] = useState(false);
-    const [autoPlay, setAutoPlay] = useState(false); // Can be enabled via setting true later if needed
+    const [autoPlay] = useState(false); // Can be enabled via setting true later if needed
 
     useEffect(() => {
         if (!autoPlay) return;

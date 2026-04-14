@@ -1,25 +1,10 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import CTAButton from './ui/CTAButton';
 import heroLight from '../assets/hero-light.svg';
 import heroDark from '../assets/hero-dark.svg';
 
-const words = ['Anticipa', 'Resuelve', 'Planifica', 'Proyecta'];
-
-
-
 export default function Hero() {
-    const [index, setIndex] = useState(0);
-    useEffect(() => {
-        const headlineTimer = setInterval(() => {
-            setIndex((prev) => (prev + 1) % words.length);
-        }, 2500);
-
-        return () => {
-            clearInterval(headlineTimer);
-        };
-    }, []);
 
     return (
         <section className="hero-section relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
