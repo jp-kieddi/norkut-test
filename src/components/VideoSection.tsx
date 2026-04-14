@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, ArrowRight } from 'lucide-react';
 import LogoISO from './LogoISO';
-import videoNorkut from '../assets/video-norkut.jpg';
+import videoNorkut from '../assets/video-portada.jpeg';
 
 export default function VideoSection() {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     return (
-        <section className="video-section pt-20 pb-20 md:pt-16 md:pb-28 px-4 md:px-6 flex flex-col justify-center relative overflow-hidden bg-linear-to-b from-zinc-100 to-zinc-50">
+        <section className="video-section pt-20 pb-20 md:pt-16 md:pb-28 px-4 md:px-6 flex flex-col justify-center relative overflow-hidden">
 
             <div className="container mx-auto relative z-10">
-                {/* Intro Title */}
+                {/* Intro Title 
                 <div className="text-center mb-12 md:mb-16">
                     <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 text-[#F97A22] text-sm font-bold tracking-wide mb-6 border border-orange-200/50">
                         <Play className="w-3.5 h-3.5 fill-current" /> Ver demostración
@@ -19,7 +19,7 @@ export default function VideoSection() {
                     <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6 max-w-4xl mx-auto leading-[1.15]">
                         Toda la gestión de tu negocio <br></br>en una sola app
                     </h2>
-                </div>
+                </div>*/}
 
                 {/* Cinematic Glass Player */}
                 <div className="relative max-w-6xl mx-auto px-2 md:px-4">

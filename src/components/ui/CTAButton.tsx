@@ -19,7 +19,7 @@ export default function CTAButton({
             )}
         >
             <span className="text-[15.5px] whitespace-nowrap">{children}</span>
-            <div className="bg-white w-[36px] h-[36px] rounded-full flex items-center justify-center transform group-hover:translate-x-[2px] transition-transform shrink-0">
+            <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center transform group-hover:translate-x-[2px] transition-transform shrink-0" style={{ backgroundColor: '#ffffff' }}>
                 <ArrowRight className="w-[18px] h-[18px] text-[#F97A22]" strokeWidth={2.5} />
             </div>
         </button>

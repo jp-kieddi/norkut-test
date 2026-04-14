@@ -23,39 +23,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: nu
 export default function Features() {
     return (
         <>
-            <section id="features" className="pt-24 md:pt-0 bg-zinc-50 relative overflow-hidden">
-                <div className="container mx-auto px-4 md:px-6">
 
-
-                    {/* IA Section */}
-                    <div className="flex flex-col text-center mt-32 mb-48 lg:mb-72">
-                        <FadeIn>
-                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight max-w-4xl mx-auto">
-                                Una IA que potencia tu operación comercial
-                            </h2>
-                            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
-                                La inteligencia artificial de Norkut aprende del comportamiento real de tus ventas, inventario y clientes. Anticipa quiebres, sobrestocks y descubre oportunidades de mejora para tomar decisiones estratégicas a tiempo.
-                            </p>
-                            <div className="flex justify-center mb-24 md:mb-12">
-                                <CTAButton>
-                                    Conocer más
-                                </CTAButton>
-                            </div>
-                        </FadeIn>
-
-                        <FadeIn delay={0.2}>
-                            {/* Wrapper with significant bottom margin to offset the transform scale overlap */}
-                            <div className="w-full flex justify-center scale-[1.2] sm:scale-[1.5] origin-top mb-10 sm:mb-10 px-4">
-                                <IAConnectionAnimation />
-                            </div>
-                        </FadeIn>
-                    </div>
-
-
-
-
-                </div>
-            </section>
 
             {/* Seamless CTA Section joining FAQ */}
             <section className="bg-[#110c22] relative overflow-hidden text-white pt-32 pb-0 md:pt-48 min-h-[400px] md:min-h-[600px] lg:min-h-[600px] flex flex-col justify-center">

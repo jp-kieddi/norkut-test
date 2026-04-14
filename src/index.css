@@ -40,6 +40,18 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: 'Melefont';
+    src: url('/fonts/melefont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Melefont', sans-serif;
+  }
+
   html {
     scroll-behavior: smooth;
   }
