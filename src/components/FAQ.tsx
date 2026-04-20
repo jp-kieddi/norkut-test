@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
-const faqs = [
+export const homeFaqs = [
     {
         question: "¿Qué es exactamente Norkut?",
         answer: "Norkut es una plataforma que centraliza la complejidad operativa de tu negocio, utilizando una inteligencia artificial diseñada para aprender, razonar y anticipar decisiones mientras operas."
@@ -33,7 +33,24 @@ const faqs = [
     }
 ];
 
-export default function FAQ() {
+interface FAQItem {
+    question: string;
+    answer: string;
+}
+
+interface FAQProps {
+    title?: string;
+    description?: string;
+    faqs?: FAQItem[];
+    className?: string; // To allow custom top padding if needed
+}
+
+export default function FAQ({ 
+    title = "Preguntas frecuentes", 
+    description = "Todo lo que necesitas saber sobre cómo Norkut transforma tu operación comercial.", 
+    faqs = homeFaqs,
+    className = "py-20 lg:py-32 bg-[#110c22] relative"
+}: FAQProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const toggleFAQ = (index: number) => {
@@ -41,7 +58,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="py-20 lg:py-32 bg-[#110c22] relative">
+        <section className={className}>
             <div className="container mx-auto px-4 md:px-6">
                 <div className="bg-[#1C1A27] border border-[#2C293F] rounded-[32px] p-8 lg:p-16">
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
@@ -49,10 +66,10 @@ export default function FAQ() {
                         <div className="lg:col-span-5 flex flex-col justify-start text-left pt-2">
                             <span className="text-[#F97A22] font-semibold text-sm mb-4">¿Aún tienes dudas?</span>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
-                                Preguntas frecuentes
+                                {title}
                             </h2>
                             <p className="text-[#9E9BAE] text-base md:text-lg leading-relaxed max-w-sm">
-                                Todo lo que necesitas saber sobre cómo Norkut transforma tu operación comercial.
+                                {description}
                             </p>
                         </div>
 

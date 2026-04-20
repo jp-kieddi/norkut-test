@@ -1,41 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import VideoSection from './components/VideoSection';
-import FeatureSlider from './components/FeatureSlider';
-import Features from './components/Features';
-import IAChat from './components/IAChat';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
-function Home() {
-  return (
-    <>
-      <Hero />
-      <div className="relative z-10">
-        {/* Sticky wrapper for VideoSection to allow IAChat to pass over it */}
-        <div className="relative">
-          <div className="sticky top-0 md:top-10 z-0">
-            <VideoSection />
-          </div>
-          <IAChat />
-        </div>
-        <FeatureSlider />
-        <Features />
-        <FAQ />
-      </div>
-    </>
-  );
-}
-
-function PricingPage() {
-  return (
-    <>
-      <Pricing />
-    </>
-  );
-}
+// Pages
+import Home from './pages/Home';
+import Precios from './pages/Precios';
+import GestionInteligente from './pages/GestionInteligente';
+import Funcionalidades from './pages/Funcionalidades';
+import SolicitarPartner from './pages/SolicitarPartner';
+import QuieroSerPartner from './pages/QuieroSerPartner';
+import Empresa from './pages/Empresa';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -44,7 +20,14 @@ function App() {
       <main className="grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/precios" element={<PricingPage />} />
+          <Route path="/precios" element={<Precios />} />
+          <Route path="/gestion-inteligente" element={<GestionInteligente />} />
+          <Route path="/funcionalidades" element={<Funcionalidades />} />
+          <Route path="/solicitar-partner" element={<SolicitarPartner />} />
+          <Route path="/quiero-ser-partner" element={<QuieroSerPartner />} />
+          <Route path="/empresa" element={<Empresa />} />
+          <Route path="/privacidad" element={<Privacy />} />
+          <Route path="/terminos" element={<Terms />} />
         </Routes>
       </main>
       <Footer />

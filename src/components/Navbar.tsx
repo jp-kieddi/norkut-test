@@ -6,8 +6,8 @@ import CTAButton from './ui/CTAButton';
 
 const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Gestión Inteligente', href: '/#gestion-inteligente' },
-    { name: 'Funcionalidades', href: '/#features' },
+    { name: 'Gestión Inteligente', href: '/gestion-inteligente' },
+    { name: 'Funcionalidades', href: '/funcionalidades' },
     { name: 'Precios', href: '/precios' },
 ];
 

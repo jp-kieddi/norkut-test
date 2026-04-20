@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Instagram, Youtube, MessageCircle, Facebook } from 'lucide-react';
 import Logo from './Logo';
 
@@ -5,31 +6,41 @@ const footerNavs = [
     {
         label: "App",
         items: [
-            { href: '#', name: 'Funcionalidades' },
-            { href: '#', name: 'Integraciones' },
-            { href: '#', name: 'Precios' },
+            { href: '/funcionalidades', name: 'Funcionalidades' },
+            { href: '/gestion-inteligente', name: 'Soluciones' },
+            { href: '/precios', name: 'Precios' },
             { href: '#', name: 'Soporte' },
         ],
     },
     {
         label: "Explorar",
         items: [
-            { href: '#', name: 'Tutoriales' },
+            { href: '/empresa', name: 'Tutoriales' },
             { href: '#', name: 'Blog' },
-            { href: '#', name: 'La empresa' },
+            { href: '/empresa', name: 'La empresa' },
         ],
     },
     {
         label: "Conecta",
         items: [
-            { href: '#', name: 'Partners' },
-            { href: '#', name: 'Solicita una demo' },
+            { href: '/quiero-ser-partner', name: 'Partners' },
+            { href: '/solicitar-partner', name: 'Solicita un partner' },
             { href: '#', name: 'Trabaja con nosotros' },
         ],
     },
 ]
 
 export default function Footer() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://chat.kieddi.com/static/chat-widget/chat-widget.js?eyJhY2NvdW50X2lkIjoid2ViXzMyIiwiZG9tYWluIjoid3d3Lm5vcmt1dC5jb20ifQ==&headerText=Norkut&mainColor=F97316&chatIconSvg=help2&borderColor=F97316&bubbleAnimationColor=EF4444&bubbleBgColor=F97316&iconColor=FFFFFF';
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
     return (
         <footer className="bg-[#110c22] relative border-t border-[#1E1B29]">
             <div className="pt-24 pb-8 container mx-auto px-4 md:px-6">
@@ -84,13 +95,14 @@ export default function Footer() {
                         © {new Date().getFullYear()} Norkut
                     </p>
                     <div className="text-[11px] text-[#9E9BAE] font-medium md:text-center">
-                        <a href="#" className="hover:text-white transition-colors">Política de privacidad</a>
+                        <a href="/privacidad" className="hover:text-white transition-colors">Política de privacidad</a>
                     </div>
                     <div className="text-[11px] text-[#9E9BAE] font-medium md:text-right">
-                        <a href="#" className="hover:text-white transition-colors">Términos de servicio</a>
+                        <a href="/terminos" className="hover:text-white transition-colors">Términos de servicio</a>
                     </div>
                 </div>
             </div>
+
         </footer>
     );
 }
