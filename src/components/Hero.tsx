@@ -16,7 +16,7 @@ export default function Hero() {
                 <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
                     <div className="flex flex-col items-start">
-                        <h1 className="text-5xl md:text-3xl lg:text-[45px] font-extrabold tracking-tight text-zinc-900 leading-[1.15] mb-6">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.15] mb-6">
 
                             Convierte la operación de tu retail en decisiones inteligentes
                         </h1>
@@ -29,9 +29,6 @@ export default function Hero() {
                             <CTAButton>
                                 Comienza gratis hoy
                             </CTAButton>
-                            <button className="px-8 h-[48px] bg-transparent border border-zinc-200/80 text-zinc-700 text-[15.5px] font-medium rounded-full hover:bg-white hover:border-zinc-300 hover:shadow-sm transition-all outline-none flex items-center justify-center shrink-0">
-                                Solicitar una demo
-                            </button>
                         </div>
 
                         <div className="mt-5 text-[14px] text-zinc-500 font-medium flex items-center gap-5">

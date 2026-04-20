@@ -114,11 +114,11 @@ export default function Funcionalidades() {
                             <span className="text-[#F97A22] font-semibold text-sm mb-4 uppercase tracking-wider block">
                                 Funcionalidades
                             </span>
-                            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-                                De datos a ejecución
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
+                                Donde la inteligencia se convierte en acción
                             </h1>
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-[#9E9BAE] font-medium">
-                                Norkut no organiza información. La convierte en acción.
+                                Norkut es el ecosistema donde proveedores, retailers y operadores se sincronizan en tiempo real. Gracias a la IA de Melé, transformamos la fricción operativa en un flujo continuo: desde la captura de la realidad en tienda hasta la ejecución financiera automática, sin intermediarios ni latencia.
                             </p>
                         </div>
                         <motion.div
@@ -152,38 +152,6 @@ export default function Funcionalidades() {
                     </div>
                 </div>
             </section>
-
-
-            {/* Technical Specs Light Section */}
-            <section className="py-24 bg-white dark:bg-[#0e0a1b]">
-                <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Características Técnicas</h2>
-                        <p className="text-zinc-600 dark:text-[#9E9BAE]">Arquitectura sólida y diseñada para escalar retail en ambientes reales.</p>
-                    </div>
-                    <div className="space-y-8">
-                        {technicalSpecs.map((spec, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: i * 0.1 }}
-                                className="flex gap-6 border-b border-zinc-100 dark:border-[#2C293F] pb-8 last:border-0"
-                            >
-                                <div className="text-[#F97A22] font-black text-3xl tabular-nums shrink-0 w-12">{spec.num}</div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2 flex items-center gap-2">
-                                        <spec.icon size={16} className="text-[#F97A22]" /> {spec.title}
-                                    </h4>
-                                    <p className="text-sm text-zinc-600 dark:text-[#9E9BAE] leading-relaxed">{spec.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Deep Dive Operational Grid */}
             <section className="py-24 bg-zinc-50 dark:bg-[#0e0a1b] relative">
                 <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -225,6 +193,37 @@ export default function Funcionalidades() {
                     </div>
                 </div>
             </section>
+            {/* Technical Specs Light Section */}
+            <section className="py-24 bg-white dark:bg-[#0e0a1b]">
+                <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Características Técnicas</h2>
+                        <p className="text-zinc-600 dark:text-[#9E9BAE]">Arquitectura sólida y diseñada para escalar retail en ambientes reales.</p>
+                    </div>
+                    <div className="space-y-8">
+                        {technicalSpecs.map((spec, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 15 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: i * 0.1 }}
+                                className="flex gap-6 border-b border-zinc-100 dark:border-[#2C293F] pb-8 last:border-0"
+                            >
+                                <div className="text-[#F97A22] font-black text-3xl tabular-nums shrink-0 w-12">{spec.num}</div>
+                                <div>
+                                    <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2 flex items-center gap-2">
+                                        <spec.icon size={16} className="text-[#F97A22]" /> {spec.title}
+                                    </h4>
+                                    <p className="text-sm text-zinc-600 dark:text-[#9E9BAE] leading-relaxed">{spec.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Closing Banner — purple matching FAQ block 
             <section className="py-24 bg-[#110C26] border-y border-[#2C293F]">

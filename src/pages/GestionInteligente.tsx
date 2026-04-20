@@ -72,7 +72,7 @@ export default function GestionInteligente() {
                             className="text-left"
                         >
                             <span className="text-[#F97A22] font-semibold text-sm mb-4 uppercase tracking-wider block">
-                                Gestión Inteligente (Powered by Melé)
+                                Gestión Inteligente by Melé
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.1] mb-6">
                                 Infraestructura inteligente para el comercio real

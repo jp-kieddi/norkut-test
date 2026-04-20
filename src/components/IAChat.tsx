@@ -37,7 +37,7 @@ export default function IAChat() {
             id="ia-chat"
             ref={sectionRef}
             onMouseMove={handleMouseMove}
-            className="relative bg-[#ffffff] dark:bg-[#110c22] pt-32 pb-40 px-4 md:px-8 z-50 mt-14 md:mt-14 drop-shadow-2xl overflow-hidden"
+            className="relative bg-[#ffffff] dark:bg-[#110c22] pt-32 pb-40 px-4 md:px-8 z-50 mt-14 md:mt-14  overflow-hidden"
         >
             {/* Soft Purple Blur following mouse */}
             <motion.div

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Instagram, Youtube, MessageCircle, Facebook } from 'lucide-react';
 import Logo from './Logo';
+import ChatWidget from './ChatWidget';
 
 const footerNavs = [
     {
@@ -31,18 +31,9 @@ const footerNavs = [
 ]
 
 export default function Footer() {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://chat.kieddi.com/static/chat-widget/chat-widget.js?eyJhY2NvdW50X2lkIjoid2ViXzMyIiwiZG9tYWluIjoid3d3Lm5vcmt1dC5jb20ifQ==&headerText=Norkut&mainColor=F97316&chatIconSvg=help2&borderColor=F97316&bubbleAnimationColor=EF4444&bubbleBgColor=F97316&iconColor=FFFFFF';
-        script.async = true;
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
     return (
         <footer className="bg-[#110c22] relative border-t border-[#1E1B29]">
+            <ChatWidget />
             <div className="pt-24 pb-8 container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 md:gap-8">
                     {/* Brand Col */}
