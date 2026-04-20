@@ -14,11 +14,11 @@ export default function SolicitarPartner() {
         <main className="w-full">
             {/* Header / Hero */}
             <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-[linear-gradient(180deg,#edf2f7_0px,#edf2f7_400px,#f6f5f5_1000px,#f6f5f5_100%)] dark:bg-none dark:bg-[#110c22] relative overflow-hidden">
-                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#e2ecf7] rounded-full blur-[120px] pointer-events-none opacity-80" />
-                
+                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#e2ecf7] rounded-full blur-[120px] pointer-events-none opacity-20" />
+
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
@@ -35,7 +35,7 @@ export default function SolicitarPartner() {
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
@@ -74,7 +74,7 @@ export default function SolicitarPartner() {
                                     <label className="text-sm font-medium text-zinc-700">¿Qué desafío quieres resolver?</label>
                                     <textarea rows={3} className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none" placeholder="Breve descripción de tus necesidades operativas..." />
                                 </div>
-                                
+
                                 <button className="w-full bg-primary hover:bg-[#e67319] text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary/25">
                                     Solicitar conexión <Send size={18} />
                                 </button>
@@ -84,12 +84,12 @@ export default function SolicitarPartner() {
                 </div>
             </section>
 
-            <FAQ 
+            <FAQ
                 title="Dudas sobre nuestros Partners"
                 description="Conoce cómo los partners de Norkut potenciarán la integración del sistema en tu ecosistema diario."
                 faqs={pageFaqs}
             />
-            
+
             <CTASection />
         </main>
     );

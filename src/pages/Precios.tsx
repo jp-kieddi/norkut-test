@@ -90,7 +90,7 @@ export default function Precios() {
                 {/* Grid Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 px-0">
                     {plans.map((plan, i) => (
-                        <div key={i} className={`relative flex flex-col bg-white border ${plan.popular ? 'border-primary shadow-xl md:-translate-y-2 z-10' : 'border-zinc-200 shadow-sm'} rounded-3xl p-6 transition-transform duration-300`}>
+                        <div key={i} className={`relative flex flex-col bg-white border ${plan.popular ? 'border-primary shadow-xl md:-translate-y-2 z-10' : 'border-zinc-200 dark:border-gray-900 shadow-sm'} rounded-3xl p-6 transition-transform duration-300`}>
                             {plan.popular && (
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap">
                                     El más elegido
@@ -98,7 +98,7 @@ export default function Precios() {
                             )}
                             <h3 className="text-2xl font-bold text-zinc-900 mb-1">{plan.name}</h3>
                             <p className="text-[13px] font-medium text-zinc-500 mb-5 h-8 italic">{plan.subtitle}</p>
-                            <div className="mb-6 pb-6 border-b border-zinc-100">
+                            <div className="mb-6 pb-6 border-b border-zinc-100  dark:border-gray-700">
                                 {plan.isConsultative ? (
                                     <div className="text-3xl font-extrabold text-zinc-900 py-1">Consultivo</div>
                                 ) : (
@@ -126,7 +126,7 @@ export default function Precios() {
                 </div>
 
                 {/* Additional Info Grid */}
-                <div className="grid md:grid-cols-3 gap-8 py-16 border-t border-zinc-100">
+                <div className="grid md:grid-cols-3 gap-8 py-16 border-t border-zinc-100 dark:border-gray-700">
                     <div>
                         <div className="w-10 h-10 bg-orange-50 text-primary rounded-xl flex items-center justify-center mb-4">
                             <ArrowRight className="w-5 h-5" />

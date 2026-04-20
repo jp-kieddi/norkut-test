@@ -74,13 +74,13 @@ export default function CTASection() {
                 {/* CTA Content */}
                 <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center pb-32 md:pb-28 mt-auto mb-auto">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 max-w-3xl text-white">
-                        Empieza a usar Norkut ahora
+                        Empieza a operar con inteligencia
                     </h2>
                     <p className="text-[#9E9BAE] text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
-                        Únete a más de 1000 negocios que ya confían en Norkut para gestionar su inventario. Sin tarjeta de crédito requerida.
+                        Únete a los negocios que ya están tomando decisiones en tiempo real con Norkut.
                     </p>
                     <CTAButton>
-                        Empieza gratis hoy
+                        Empieza gratis
                     </CTAButton>
                 </div>
             </section>

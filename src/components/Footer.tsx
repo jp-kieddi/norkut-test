@@ -7,16 +7,14 @@ const footerNavs = [
         label: "App",
         items: [
             { href: '/funcionalidades', name: 'Funcionalidades' },
-            { href: '/gestion-inteligente', name: 'Soluciones' },
+            { href: '/gestion-inteligente', name: 'Gestión Inteligente' },
             { href: '/precios', name: 'Precios' },
-            { href: '#', name: 'Soporte' },
         ],
     },
     {
         label: "Explorar",
         items: [
             { href: '/empresa', name: 'Tutoriales' },
-            { href: '#', name: 'Blog' },
             { href: '/empresa', name: 'La empresa' },
         ],
     },
@@ -24,8 +22,7 @@ const footerNavs = [
         label: "Conecta",
         items: [
             { href: '/quiero-ser-partner', name: 'Partners' },
-            { href: '/solicitar-partner', name: 'Solicita un partner' },
-            { href: '#', name: 'Trabaja con nosotros' },
+            { href: '/solicitar-partner', name: 'Solicita una demo' },
         ],
     },
 ]

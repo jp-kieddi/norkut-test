@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import CTASection from '../components/CTASection';
-import FAQ from '../components/FAQ';
 import { ShieldCheck, Cpu, Code2 } from 'lucide-react';
 
 const values = [
@@ -9,19 +8,15 @@ const values = [
     { title: "Gobernanza completa", desc: "Ideal para esquemas complejos. Da autonomía a tus locaciones o franquicias manteniendo un control centralizado estricto sobre finanzas, stock de transferencia y marketing.", icon: ShieldCheck }
 ];
 
-const pageFaqs = [
-    { question: "¿Dónde opera Norkut centralmente?", answer: "Norkut opera como una plataforma 100% cloud alojada en ecosistemas AWS, lo que asegura disponibilidad, replicación y seguridad extrema en múltiples territorios." },
-    { question: "¿Cuentan con soporte técnico?", answer: "Nuestros clientes Enterprise y de capas Growth cuentan con consultores dedicados (Partners y soporte core) asegurando la continuidad las 24 horas del día." }
-];
 
 export default function Empresa() {
     return (
         <main className="w-full">
             <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-[linear-gradient(180deg,#edf2f7_0px,#edf2f7_400px,#f6f5f5_1000px,#f6f5f5_100%)] dark:bg-none dark:bg-[#110c22] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-orange-50 to-transparent blur-[120px] opacity-70 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-orange-50 to-transparent blur-[120px] opacity-20 pointer-events-none" />
                 <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -34,13 +29,13 @@ export default function Empresa() {
                                 Construimos el retail <span className="text-primary italic">autónomo.</span>
                             </h1>
                             <p className="text-lg text-zinc-600 font-medium leading-relaxed">
-                                Norkut nace con una premisa simple pero radical: la información ya no debe organizarse, debe convertirse en acción. 
-                                Reemplazamos los dashboards pasivos por inferencia continua mediante IA. Cuando ocurre una transacción en la caja de 
+                                Norkut nace con una premisa simple pero radical: la información ya no debe organizarse, debe convertirse en acción.
+                                Reemplazamos los dashboards pasivos por inferencia continua mediante IA. Cuando ocurre una transacción en la caja de
                                 tu tienda, nosotros vectorizamos su impacto en todo tu ecosistema.
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
@@ -78,14 +73,14 @@ export default function Empresa() {
                 </div>
             </section>
 
-            <section className="py-24 bg-zinc-50 border-t border-zinc-100">
+            <section className="py-24 bg-zinc-50 border-t border-zinc-100 dark:border-gray-900">
                 <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">La visión operativa</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {values.map((v, i) => (
-                            <motion.div 
+                            <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 15 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -104,12 +99,6 @@ export default function Empresa() {
                 </div>
             </section>
 
-            <FAQ 
-                title="Dudas Corporativas"
-                description="Aspectos estructurales sobre quiénes somos y cómo operamos a gran escala."
-                faqs={pageFaqs}
-            />
-            
             <CTASection />
         </main>
     );

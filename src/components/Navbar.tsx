@@ -21,7 +21,7 @@ export default function Navbar() {
             setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
-        
+
         // Init dark mode state
         if (document.documentElement.classList.contains('dark')) {
             setIsDarkMode(true);
@@ -31,8 +31,15 @@ export default function Navbar() {
     }, []);
 
     const toggleDarkMode = () => {
-        document.documentElement.classList.toggle('dark');
-        setIsDarkMode(!isDarkMode);
+        const isDark = !isDarkMode;
+        setIsDarkMode(isDark);
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
     };
 
     return (
@@ -60,9 +67,9 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        
+
                         {/* Dark Mode Toggle */}
-                        <button 
+                        <button
                             onClick={toggleDarkMode}
                             className="p-2 rounded-full hover:bg-orange-50 dark:hover:bg-white/10 text-zinc-500 dark:text-zinc-400 hover:text-[#F97A22] dark:hover:text-[#F97A22] transition-colors"
                             aria-label="Toggle Dark Mode"
@@ -73,7 +80,7 @@ export default function Navbar() {
 
                     {/* Right Utilities + CTA */}
                     <div className="hidden md:flex items-center gap-4 pl-6">
-                        {/* Country Selector */}
+                        {/* Country Selector
                         <div className="relative group flex items-center h-[46px]">
                             <select 
                                 defaultValue="ve"
@@ -87,7 +94,7 @@ export default function Navbar() {
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                             </div>
                         </div>
-
+                        */}
                         <CTAButton className="h-[46px]">
                             Empieza gratis
                         </CTAButton>

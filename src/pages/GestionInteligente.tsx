@@ -13,11 +13,11 @@ const meleCapabilities = [
 ];
 
 const layers = [
-    { num: '01', title: "Realidad en el Borde", subtitle: "Captura pura", desc: "El sistema entiende lo que pasa en la tienda (ventas, stock, fricción) en el momento exacto en que ocurre. La inteligencia empieza en la caja, no en la oficina central.", icon: Activity },
-    { num: '02', title: "Inteligencia de Red", subtitle: "Relaciones seguras", desc: "Conecta a proveedores, franquiciados y retailers en una sola malla. Todos comparten la 'verdad operativa' según sus permisos, eliminando los silos de información.", icon: Network },
-    { num: '03', title: "Decisión Autónoma", subtitle: "Priorización inteligente", desc: "Melé detecta quiebres de stock o aceleraciones de demanda. No te da más reportes; te da mejores decisiones basadas en contexto real y objetivos de margen.", icon: Cpu, isMele: true },
-    { num: '04', title: "Ejecución Operativa", subtitle: "Capacidad de actuar", desc: "La decisión se convierte en movimiento. Creación automática de órdenes, transferencias de inventario y activación de campañas sin intervención manual.", icon: Zap },
-    { num: '05', title: "Flujo Económico", subtitle: "Dinero y control", desc: "Cada acción se traduce en una transacción financiera. Conciliación automática, notas de crédito y trazabilidad total del margen por cada acción ejecutada.", icon: Database },
+    { num: '01', title: "Inferencia continua", subtitle: "Captura pura", desc: "Generación automática de señales sobre ventas, inventario y comportamiento en tiempo real.", icon: Activity },
+    { num: '02', title: "Contexto operativo (RAG)", subtitle: "Relaciones seguras", desc: "Cada decisión se construye sobre contexto actualizado directamente desde la operación.", icon: Network },
+    { num: '03', title: "Decisiones accionables", subtitle: "Priorización inteligente", desc: "No solo detecta lo que pasa. Te dice exactamente qué hacer.", icon: Cpu, isMele: true },
+    { num: '04', title: "Ejecución integrada", subtitle: "Capacidad de actuar", desc: "Las acciones se ejecutan dentro del flujo: órdenes, reposición y activaciones.", icon: Zap },
+    { num: '05', title: "Ejecución integrada", subtitle: "Dinero y control", desc: "La plataforma mejora continuamente a medida que evoluciona tu operación.", icon: Database },
     { num: '06', title: "Evolución Constante", subtitle: "Software que aprende", desc: "El sistema evoluciona según las necesidades de la red. Adaptamos flujos y reglas complejas a velocidad de mercado, reemplazando tus sistemas legacy.", icon: ServerCog }
 ];
 
@@ -75,11 +75,11 @@ export default function GestionInteligente() {
                                 Gestión Inteligente by Melé
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.1] mb-6">
-                                Infraestructura inteligente para el comercio real
+                                Donde la operación se convierte en inteligencia
                             </h1>
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-[#9E9BAE] font-medium leading-relaxed flex flex-col gap-3">
-                                <span>Norkut no solo registra datos; entiende la realidad en el punto de venta, decide la mejor acción y la ejecuta.</span>
-                                <span>Es la evolución del SaaS hacia un sistema de decisiones autónomas impulsado por Melé, nuestra IA propietaria.</span>
+                                <span>Norkut conecta proveedores, tiendas y operación en un solo flujo continuo.</span>
+                                <span>Captura lo que ocurre en tiempo real y lo transforma en decisiones automáticas, sin fricción ni latencia.</span>
                             </p>
                         </motion.div>
                         <motion.div
@@ -162,12 +162,12 @@ export default function GestionInteligente() {
                                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
                                         <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">{layer.title}</h3>
                                         <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${layer.isMele ? 'bg-orange-500 text-white' : 'bg-zinc-100 dark:bg-black/30 text-zinc-500 dark:text-zinc-400'}`}>
-                                            Foco: {layer.subtitle}
+                                            {layer.subtitle}
                                         </span>
                                     </div>
                                     {layer.isMele && <span className="inline-block text-[11px] font-bold text-orange-600 bg-orange-100 dark:bg-[#F97A22]/10 dark:text-orange-400 px-2 py-0.5 rounded-sm uppercase tracking-wider mb-3">Aquí brilla Melé</span>}
                                     <p className="text-zinc-600 dark:text-[#9E9BAE] leading-relaxed">
-                                        <strong className="text-zinc-800 dark:text-zinc-200">Lo que hace:</strong> {layer.desc}
+                                        <strong className="text-zinc-800 dark:text-zinc-200"></strong> {layer.desc}
                                     </p>
                                 </div>
                             </motion.div>

@@ -87,16 +87,74 @@ const technicalSpecs = [
 ];
 
 const operationalDetails = [
-    { title: "Operación & Abastecimiento", subtitle: "Se refiere a la operación diaria del comercio.", icon: PackageSearch, items: ["Compras.", "Transferencias de mercadería entre tiendas (Puntos de venta / Sucursales).", "Conteo de Inventario."], ia: "Norkut generará alertas inteligentes que ayudaran a la gestión del retail, como qué y cuándo contar, cuándo hacer solicitudes de mercancía o redistribuir el stock en las tiendas." },
-    { title: "Ventas & POS", subtitle: "Punto crítico de velocidad y continuidad. Operación híbrida, pagos y control en caja.", icon: Receipt, items: ["Caja (Punto de Venta).", "Posibilidad de facturar sin conexión a internet.", "Manejo de múltiples formas de pago por factura.", "Integración con facturación electrónica ARCA.", "Control de turnos y ventas diarias."] },
-    { title: "Gestión de Tiendas", subtitle: "Capa de escalabilidad. Estandarización, control central y consistencia.", icon: Store, items: ["Configuración de punto de venta (Tienda/Sucursal), cantidad de cajas y sus tokens en cada una.", "Administración de puntos de ventas de la suscripción.", "Gestion centralizada de datos de las tiendas."] },
-    { title: "Marketing & Clientes", subtitle: "Relación, recurrencia y ROI. Cliente como activo, no como contacto.", icon: Users, items: ["Creación de campañas a tus clientes según su comportamiento de consumos/compras.", "Hyper-personalización de datos de clientes."], ia: "Con la IA (Melé), se podrán generar campañas inteligentes, según el comportamiento del cliente." },
-    { title: "Finanzas & Administración", subtitle: "Gobierno interno de la plataforma. Margen, conciliación, roles, permisos y trazabilidad.", icon: Landmark, items: ["Conciliación de turnos.", "Vida de resumen de movimientos de cuentas.", "Registro de pagos de cuentas."] },
-    { title: "Franquicias & Holdings", subtitle: "Capa enterprise multi-tenant e inter-gobierno.", icon: Building2, items: ["Visualización consolidada de movimientos por empresa.", "Gobierno corporativo con autonomía local: Cada Tenant es autónomo y responsable de la gestión de su comercio."], ia: "Mostrará insights con el análisis del comportamiento de cada Tenant, comparando y proponiendo mejoras en la gestión del mismo." }
+    {
+        title: "Operación & Abastecimiento",
+        subtitle: "Sincronización total de inventario.",
+        icon: PackageSearch,
+        items: [
+            "Compras inteligentes basadas en demanda real",
+            "Transferencias optimizadas entre tiendas",
+            "Inventario sincronizado en tiempo real"
+        ],
+        ia: "Norkut anticipa necesidades: cuándo comprar, cuánto mover y dónde ajustar stock para maximizar rotación."
+    },
+    {
+        title: "Ventas & POS",
+        subtitle: "Atención ágil y continua.",
+        icon: Receipt,
+        items: [
+            "Punto de venta rápido, continuo y confiable",
+            "Operación híbrida (online/offline)",
+            "Múltiples formas de pago integradas",
+            "Control total de caja y turnos"
+        ]
+    },
+    {
+        title: "Gestión de Tiendas",
+        subtitle: "Escalabilidad centralizada.",
+        icon: Store,
+        items: [
+            "Configuración centralizada de tiendas y cajas",
+            "Control operativo en tiempo real",
+            "Estandarización de procesos"
+        ]
+    },
+    {
+        title: "Marketing & Clientes",
+        subtitle: "Conversión y recurrencia.",
+        icon: Users,
+        items: [
+            "Campañas basadas en comportamiento real",
+            "Segmentación automática de clientes",
+            "Personalización sin esfuerzo"
+        ],
+        ia: "La plataforma detecta patrones y activa campañas automáticamente según el comportamiento del cliente."
+    },
+    {
+        title: "Finanzas & Administración",
+        subtitle: "Trazabilidad administrativa total.",
+        icon: Landmark,
+        items: [
+            "Conciliación automática de operaciones",
+            "Trazabilidad completa de movimientos",
+            "Control financiero en tiempo real"
+        ]
+    },
+    {
+        title: "Franquicias & Holdings",
+        subtitle: "Gobierno corporativo multi-tenant.",
+        icon: Building2,
+        items: [
+            "Visión consolidada de toda la operación",
+            "Control corporativo con autonomía local",
+            "Gestión multi-empresa sin fricción"
+        ],
+        ia: "Compara desempeño entre unidades y detecta oportunidades de mejora automáticamente."
+    }
 ];
 
 const pageFaqs = [
-    { question: "¿Cómo se integra el POS con la infraestructura de IA?", answer: "Norkut opera como un ecosistema. Los eventos registrados en el POS (ventas, quiebres de transacciones) viajan en tiempo real y nutren el vector de contexto operacional." },
+    { question: "¿Cómo se integra el POS con la infraestructura de IA?", answer: "Norkut opera como un flujo continuo. Cada evento en el POS (ventas, inventario, transacciones) se procesa en tiempo real y alimenta el contexto operativo que impulsa decisiones inteligentes." },
     { question: "¿Necesito conocimientos técnicos para interpretar las inferencias?", answer: "No. El sistema de decisión accionable te traduce la matemática compleja en prompts de negocios simples: 'Transfiere 20 unidades del producto X a la tienda Y'." },
     { question: "¿Se puede operar el POS sin internet?", answer: "Totalmente. El diseño híbrido del POS permite facturar sin conexión y sincroniza los datos al regresar a la red para mantener intacto el entrenamiento de Melé." }
 ];

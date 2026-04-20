@@ -18,11 +18,12 @@ export default function Hero() {
                     <div className="flex flex-col items-start">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.15] mb-6">
 
-                            Convierte la operación de tu retail en decisiones inteligentes
+                            Convierte cada operación en decisiones inteligentes
                         </h1>
 
                         <p className="text-lg md:text-xl text-zinc-500 font-medium leading-relaxed mb-10 max-w-lg">
-                            Norkut convierte tus datos en decisiones que impulsan ventas, margen y control.
+                            Norkut transforma lo que pasa en tu negocio en decisiones que aumentan ventas, margen y control en tiempo real.
+
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -39,6 +40,10 @@ export default function Hero() {
                             <div className="flex items-center gap-1.5">
                                 <CheckCircle2 className="w-[16px] h-[16px] text-[#F97A22]" strokeWidth={1.5} />
                                 Sin instalaciones
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <CheckCircle2 className="w-[16px] h-[16px] text-[#F97A22]" strokeWidth={1.5} />
+                                Sin fricción
                             </div>
                         </div>
                     </div>
