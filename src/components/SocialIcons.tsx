@@ -1,4 +1,4 @@
-import { Instagram, Youtube, MessageCircle, Facebook } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 
 export default function SocialIcons({ className }: { className?: string }) {
     return (
