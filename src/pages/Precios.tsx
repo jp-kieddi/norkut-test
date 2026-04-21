@@ -118,7 +118,7 @@ export default function Precios() {
                                 ))}
                             </ul>
 
-                            <a href="https://app.norkut.com" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold transition-all text-center block ${plan.popular ? 'bg-primary text-white hover:bg-[#e67319] shadow-lg shadow-primary/30' : plan.isConsultative ? 'bg-zinc-900 text-white hover:bg-zinc-800' : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200'}`}>
+                            <a href="https://auth.norkut-cloud.com/sign-up" target="_blank" rel="noopener noreferrer" className={`w-full py-3 rounded-xl font-bold transition-all text-center block ${plan.popular ? 'bg-primary text-white hover:bg-[#e67319] shadow-lg shadow-primary/30' : plan.isConsultative ? 'bg-zinc-900 text-white hover:bg-zinc-800' : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200'}`}>
                                 {plan.isConsultative ? 'Contactar ventas' : 'Comenzar gratis'}
                             </a>
                         </div>

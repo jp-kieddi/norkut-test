@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 export default function CTAButton({
     children,
     className,
-    href = "https://app.norkut.com",
+    href = "https://auth.norkut-cloud.com/sign-up",
     onClick,
 }: {
     children: React.ReactNode;
