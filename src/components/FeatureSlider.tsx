@@ -319,11 +319,11 @@ export default function FeatureSlider() {
     };
 
     return (
-        <section className="py-24 bg-zinc-50 overflow-hidden relative">
+        <section className="py-14 lg:py-24 bg-zinc-50 overflow-hidden relative">
             <div className="container mx-auto px-4 md:px-6">
-                
+
                 {/* Section Title */}
-                <h2 className="text-3xl md:text-5xl lg:text-[42px] font-extrabold tracking-tight text-zinc-900 text-center mb-10 md:mb-12">
+                <h2 className="text-4xl md:text-5xl lg:text-[42px] font-extrabold tracking-tight text-zinc-900 text-center mb-15 md:mb-12">
                     Una plataforma, múltiples funcionalidades
                 </h2>
 
@@ -336,11 +336,10 @@ export default function FeatureSlider() {
                                 <button
                                     key={feature.id}
                                     onClick={() => setActiveIndex(idx)}
-                                    className={`flex items-center justify-center flex-1 gap-2 px-4 md:px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap shrink-0 border ${
-                                        isActive 
-                                            ? 'bg-[#ffffff] dark:bg-transparent border-[#F97A22] text-[#F97A22] shadow-[0_2px_10px_-4px_rgba(249,122,34,0.3)]' 
-                                            : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:bg-transparent'
-                                    }`}
+                                    className={`flex items-center justify-center flex-1 gap-2 px-4 md:px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap shrink-0 border ${isActive
+                                        ? 'bg-[#ffffff] dark:bg-transparent border-[#F97A22] text-[#F97A22] shadow-[0_2px_10px_-4px_rgba(249,122,34,0.3)]'
+                                        : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:bg-transparent'
+                                        }`}
                                 >
                                     <feature.Icon className="w-[18px] h-[18px]" strokeWidth={isActive ? 2.5 : 2} />
                                     {feature.category}
@@ -351,7 +350,7 @@ export default function FeatureSlider() {
                 </div>
 
                 {/* Slider Container */}
-                <div 
+                <div
                     className="bg-linear-to-b from-[#edf2f7] to-[#f6f5f5] dark:bg-none dark:bg-[#262232] rounded-[2.5rem] border border-zinc-200 dark:border-[#4b4756] p-8 md:p-12 lg:p-16 relative shadow-sm min-h-[500px] flex items-center group max-w-6xl mx-auto"
                     onMouseEnter={() => setIsHoveringSlide(true)}
                     onMouseLeave={() => setIsHoveringSlide(false)}
@@ -382,7 +381,7 @@ export default function FeatureSlider() {
                                     </CTAButton>
                                 </div>
                             </div>
-                            
+
                             {/* Mobile View text content (to preserve order or adapt better on phones) */}
                             <div className="md:hidden flex flex-col text-center items-center mb-6">
                                 <span className="inline-block text-sm font-bold text-[#F97A22] mb-2 uppercase">
@@ -399,7 +398,7 @@ export default function FeatureSlider() {
                                     const AnimationComponent = featuresData[activeIndex].Animation;
                                     return <AnimationComponent />;
                                 })()}
-                                
+
                                 {/* Mobile Prev Arrow */}
                                 <button
                                     onClick={handlePrev}
@@ -408,7 +407,7 @@ export default function FeatureSlider() {
                                 >
                                     <ArrowLeft className="w-5 h-5" />
                                 </button>
-                                
+
                                 {/* Mobile Next Arrow */}
                                 <button
                                     onClick={handleNext}
@@ -418,7 +417,7 @@ export default function FeatureSlider() {
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
                             </div>
-                            
+
                             {/* Mobile specific description and CTA placed below animation */}
                             <div className="md:hidden flex flex-col text-center mt-6">
                                 <p className="text-[15px] text-zinc-600 font-medium leading-relaxed mb-6">
@@ -456,14 +455,13 @@ export default function FeatureSlider() {
                         <button
                             key={idx}
                             onClick={() => setActiveIndex(idx)}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                                idx === activeIndex ? 'bg-[#F97A22] w-6' : 'bg-zinc-300 w-2 hover:bg-zinc-400'
-                            }`}
+                            className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-[#F97A22] w-6' : 'bg-zinc-300 w-2 hover:bg-zinc-400'
+                                }`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />
                     ))}
                 </div>
-                
+
             </div>
         </section>
     );

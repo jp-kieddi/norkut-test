@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Sun, Moon, Monitor } from 'lucide-react';
 import Logo from './Logo';
 import CTAButton from './ui/CTAButton';
+import SocialIcons from './SocialIcons';
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -15,12 +17,18 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
+
+        const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' | null;
+        if (storedTheme) {
+            setTheme(storedTheme);
+        }
 
         // Init dark mode state
         if (document.documentElement.classList.contains('dark')) {
@@ -30,16 +38,41 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleDarkMode = () => {
-        const isDark = !isDarkMode;
-        setIsDarkMode(isDark);
-        if (isDark) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
+    // Prevent scrolling when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
         } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
+            document.body.style.overflow = '';
         }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [mobileMenuOpen]);
+
+    const handleThemeChange = (newTheme: 'light' | 'dark' | 'system') => {
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        if (newTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            setIsDarkMode(true);
+        } else if (newTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+            setIsDarkMode(false);
+        } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+                setIsDarkMode(true);
+            } else {
+                document.documentElement.classList.remove('dark');
+                setIsDarkMode(false);
+            }
+        }
+    };
+
+    const toggleDarkMode = () => {
+        handleThemeChange(isDarkMode ? 'light' : 'dark');
     };
 
     return (
@@ -50,13 +83,13 @@ export default function Navbar() {
                 }`}
         >
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between px-4 lg:px-0 py-2 lg:py-0">
                     <div className="flex items-center gap-2 text-zinc-900">
-                        <Logo className="h-8 w-auto ml-[-12px] md:h-10" />
+                        <Logo className="h-10 lg:h-10 w-auto ml-[-12px] md:h-10 mt-1" />
                     </div>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center gap-8">
+                    <nav className="hidden lg:flex items-center gap-8">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
@@ -79,7 +112,7 @@ export default function Navbar() {
                     </nav>
 
                     {/* Right Utilities + CTA */}
-                    <div className="hidden md:flex items-center gap-4 pl-6">
+                    <div className="hidden lg:flex items-center gap-4 pl-6">
                         {/* Country Selector
                         <div className="relative group flex items-center h-[46px]">
                             <select 
@@ -102,35 +135,140 @@ export default function Navbar() {
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="md:hidden text-foreground p-2 -mr-2"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="lg:hidden text-foreground p-2 -mr-2"
+                        onClick={() => setMobileMenuOpen(true)}
                     >
-                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        <Menu size={24} />
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 flex flex-col p-4 animate-in slide-in-from-top-2">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.href}
-                            className="py-3 px-4 text-base font-medium text-foreground hover:bg-gray-50 rounded-lg"
+            {/* Mobile Menu Drawer */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <div className="lg:hidden fixed inset-0 z-[9999999] flex justify-end">
+                        {/* Overlay */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 bg-black/40 backdrop-blur-md"
                             onClick={() => setMobileMenuOpen(false)}
+                        />
+
+                        {/* Drawer */}
+                        <motion.div
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="relative w-full max-w-[350px] h-[100dvh] bg-white dark:bg-[#110c22] shadow-2xl flex flex-col pt-6 pb-6 px-4 border-l border-zinc-100 dark:border-white/10"
                         >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <div className="h-px bg-gray-100 my-4 mx-4"></div>
-                    <div className="flex flex-col gap-3 px-4 pb-4">
-                        <CTAButton className="w-full">
-                            Empieza gratis
-                        </CTAButton>
+                            <div className="flex justify-between items-center mb-10 px-2">
+                                <Logo className="h-8 w-auto text-zinc-900 dark:text-white" />
+                                <button
+                                    className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    <X size={24} />
+                                </button>
+                            </div>
+
+                            <div className="flex-1 overflow-y-auto flex flex-col gap-2">
+                                {navLinks.map((link) => (
+                                    <Link
+                                        key={link.name}
+                                        to={link.href}
+                                        className="py-3 px-4 text-base font-medium text-zinc-700 hover:text-[#F97A22] hover:bg-orange-50 dark:text-zinc-300 dark:hover:text-[#F97A22] dark:hover:bg-white/5 rounded-xl transition-all"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className="pt-6 mt-6 border-t border-zinc-100 dark:border-white/10">
+                                <CTAButton className="w-full">
+                                    Empieza gratis
+                                </CTAButton>
+                            </div>
+
+                            <div className="pt-6 mt-6 border-t border-zinc-100 dark:border-white/10 px-2">
+                                <h4 className="text-xs font-semibold text-[#F97A22] mb-4 uppercase tracking-wider">Explorar</h4>
+                                <div className="flex flex-col gap-1">
+                                    <Link
+                                        to="/tutoriales"
+                                        className="py-2 text-sm font-medium text-zinc-600 hover:text-[#F97A22] dark:text-zinc-400 dark:hover:text-[#F97A22] transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Tutoriales
+                                    </Link>
+                                    <Link
+                                        to="/solicitar-partner"
+                                        className="py-2 text-sm font-medium text-zinc-600 hover:text-[#F97A22] dark:text-zinc-400 dark:hover:text-[#F97A22] transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Solicita una demo
+                                    </Link>
+                                    <Link
+                                        to="/quiero-ser-partner"
+                                        className="py-2 text-sm font-medium text-zinc-600 hover:text-[#F97A22] dark:text-zinc-400 dark:hover:text-[#F97A22] transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Conviértete en Partner
+                                    </Link>
+                                    <Link
+                                        to="/empresa"
+                                        className="py-2 text-sm font-medium text-zinc-600 hover:text-[#F97A22] dark:text-zinc-400 dark:hover:text-[#F97A22] transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        La empresa
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="pt-6 mt-6 border-t border-zinc-100 dark:border-white/10 px-2 pb-2">
+                                <h4 className="text-xs font-semibold text-[#F97A22] mb-4 uppercase tracking-wider">Apariencia</h4>
+                                <div className="flex bg-zinc-100 dark:bg-white/5 p-1.5 rounded-2xl items-center gap-1">
+                                    <button
+                                        onClick={() => handleThemeChange('light')}
+                                        className={`flex-1 flex justify-center items-center py-2.5 rounded-xl transition-all ${
+                                            theme === 'light' ? 'bg-white dark:bg-[#1a1429] text-[#F97A22] shadow-sm' : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
+                                        }`}
+                                        aria-label="Modo Claro"
+                                    >
+                                        <Sun size={20} strokeWidth={theme === 'light' ? 2.5 : 2} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleThemeChange('dark')}
+                                        className={`flex-1 flex justify-center items-center py-2.5 rounded-xl transition-all ${
+                                            theme === 'dark' ? 'bg-white dark:bg-[#1a1429] text-[#F97A22] shadow-sm' : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
+                                        }`}
+                                        aria-label="Modo Oscuro"
+                                    >
+                                        <Moon size={20} strokeWidth={theme === 'dark' ? 2.5 : 2} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleThemeChange('system')}
+                                        className={`flex-1 flex justify-center items-center py-2.5 rounded-xl transition-all ${
+                                            theme === 'system' ? 'bg-white dark:bg-[#1a1429] text-[#F97A22] shadow-sm' : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200'
+                                        }`}
+                                        aria-label="Modo Sistema"
+                                    >
+                                        <Monitor size={20} strokeWidth={theme === 'system' ? 2.5 : 2} />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="pt-6 mt-6 border-t border-zinc-100 dark:border-white/10 px-2 flex justify-start">
+                                <SocialIcons />
+                            </div>
+
+
+                        </motion.div>
                     </div>
-                </div>
-            )}
+                )}
+            </AnimatePresence>
         </header>
     );
 }

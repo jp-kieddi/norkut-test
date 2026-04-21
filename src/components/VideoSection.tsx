@@ -8,7 +8,7 @@ export default function VideoSection() {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     return (
-        <section className="video-section pt-20 pb-20 md:pt-16 md:pb-28 px-4 md:px-6 flex flex-col justify-center relative overflow-hidden">
+        <section className="video-section sm:pt-20 sm:pb-20 md:pt-16 md:pb-28 px-4 md:px-6 flex flex-col justify-center relative overflow-hidden">
 
             <div className="container mx-auto relative z-10">
                 {/* Intro Title 

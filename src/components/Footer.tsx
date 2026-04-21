@@ -1,6 +1,6 @@
-import { Instagram, Youtube, MessageCircle, Facebook } from 'lucide-react';
 import Logo from './Logo';
 import ChatWidget from './ChatWidget';
+import SocialIcons from './SocialIcons';
 
 const footerNavs = [
     {
@@ -34,31 +34,18 @@ export default function Footer() {
             <div className="pt-24 pb-8 container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 md:gap-8">
                     {/* Brand Col */}
-                    <div className="lg:col-span-2 space-y-6">
-                        <div className="text-white w-32 mb-4">
-                            <Logo className="h-8 w-auto text-white" />
+                    <div className="lg:col-span-2 space-y-6  items-center lg:items-start">
+                        <div className="text-white mb-4  w-full flex items-center lg:items-start justify-center lg:justify-start">
+                            <Logo className="h-10 w-auto text-white" />
                         </div>
-                        <p className="text-[#9E9BAE] text-xs max-w-xs leading-relaxed">
+                        <p className="text-[#9E9BAE] text-xs text-center lg:text-left  w-full leading-relaxed">
                             La plataforma que centraliza la complejidad operativa en la gestión de inventario de tu negocio.
                         </p>
-                        <div className="flex items-center gap-4 pt-2">
-                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
-                                <Youtube size={14} />
-                            </a>
-                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
-                                <MessageCircle size={14} />
-                            </a>
-                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
-                                <Facebook size={14} />
-                            </a>
-                            <a href="#" className="w-8 h-8 rounded-full border border-[#F97A22] flex items-center justify-center text-[#F97A22] hover:bg-[#F97A22] hover:text-white transition-colors">
-                                <Instagram size={14} />
-                            </a>
-                        </div>
+                        <SocialIcons className="pt-2 flex items-center justify-center lg:justify-start" />
                     </div>
 
                     {/* Nav Cols */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:col-span-3 gap-8 sm:gap-12 pl-0 lg:pl-12">
+                    <div className="grid grid-cols-3 md:grid-cols-3 lg:col-span-3 gap-8 sm:gap-12 pl-0 lg:pl-12">
                         {footerNavs.map((navItem, idx) => (
                             <div key={idx} className="space-y-4">
                                 <h4 className="text-base font-semibold text-[#F97A22] mb-6">

@@ -7,7 +7,7 @@ import heroDark from '../assets/hero-dark.svg';
 export default function Hero() {
 
     return (
-        <section className="hero-section relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+        <section className="hero-section relative pt-38 pb-36 md:pt-36 md:pb-24 overflow-hidden">
             {/* Soft Ambient Orbs Matching Image Background */}
             <div className="hero-orb absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#e2ecf7] rounded-full blur-[120px] pointer-events-none opacity-80" />
             {/* Transition to next section base color gracefully handled by next component */}
@@ -15,8 +15,8 @@ export default function Hero() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-                    <div className="flex flex-col items-start">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.15] mb-6">
+                    <div className="flex flex-col items-center text-center lg:text-left lg:items-start pt-10 lg:pt-0">
+                        <h1 className="text-5xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.15] mb-6">
 
                             Convierte cada operación en decisiones inteligentes
                         </h1>
@@ -26,7 +26,7 @@ export default function Hero() {
 
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pb-10 pt-6 lg:py-0">
                             <CTAButton>
                                 Comienza gratis hoy
                             </CTAButton>

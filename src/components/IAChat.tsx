@@ -37,7 +37,7 @@ export default function IAChat() {
             id="ia-chat"
             ref={sectionRef}
             onMouseMove={handleMouseMove}
-            className="relative bg-[#ffffff] dark:bg-[#110c22] pt-32 pb-40 px-4 md:px-8 z-50 mt-14 md:mt-14  overflow-hidden"
+            className="relative bg-[#ffffff] dark:bg-[#110c22] pt-20 pb-20 lg:pt-32 lg:pb-40 px-4 md:px-8 z-50 mt-14 md:mt-14  overflow-hidden"
         >
             {/* Soft Purple Blur following mouse */}
             <motion.div
@@ -58,7 +58,7 @@ export default function IAChat() {
                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 text-center mb-6 max-w-3xl leading-[1.15]">
                     Una IA que te acompaña en todas tus decisiones
                 </h2>
-                <p className="text-lg md:text-[20px] text-zinc-600 font-medium leading-relaxed mb-36 max-w-3xl text-center">
+                <p className="text-lg md:text-[20px] text-zinc-600 font-medium leading-relaxed mb-20 lg:mb-36 max-w-3xl text-center">
                     La inteligencia artificial de Norkut aprende del comportamiento real de tus ventas, inventario y clientes. Anticipa quiebres, sobrestocks y descubre oportunidades de mejora para tomar decisiones estratégicas a tiempo.
                 </p>
 
@@ -86,7 +86,7 @@ export default function IAChat() {
                                 </defs>
                             </svg>
                         </motion.div>
-                        <h3 className="text-2xl font-bold font-['Melefont']" style={{
+                        <h3 className="text-xl lg:text-2xl font-bold font-['Melefont']" style={{
                             background: "linear-gradient(to right, #4FA9FF, #D16DFF)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent"
