@@ -7,7 +7,7 @@ import heroDark from '../assets/hero-dark.svg';
 export default function Hero() {
 
     return (
-        <section className="hero-section relative pt-38 pb-36 md:pt-36 md:pb-24 overflow-hidden">
+        <section className="hero-section relative pt-18 pb-36 md:pt-36 md:pb-24 overflow-hidden">
             {/* Soft Ambient Orbs Matching Image Background */}
             <div className="hero-orb absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#e2ecf7] rounded-full blur-[120px] pointer-events-none opacity-80" />
             {/* Transition to next section base color gracefully handled by next component */}

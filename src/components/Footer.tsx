@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import ChatWidget from './ChatWidget';
 import SocialIcons from './SocialIcons';
@@ -36,7 +37,9 @@ export default function Footer() {
                     {/* Brand Col */}
                     <div className="lg:col-span-2 space-y-6  items-center lg:items-start">
                         <div className="text-white mb-4  w-full flex items-center lg:items-start justify-center lg:justify-start">
-                            <Logo className="h-10 w-auto text-white" />
+                            <Link to="/">
+                                <Logo className="h-10 w-auto text-white" />
+                            </Link>
                         </div>
                         <p className="text-[#9E9BAE] text-xs text-center lg:text-left  w-full leading-relaxed">
                             La plataforma que centraliza la complejidad operativa en la gestión de inventario de tu negocio.
