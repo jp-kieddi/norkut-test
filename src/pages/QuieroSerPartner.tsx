@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import FAQ from '../components/FAQ';
 import CTASection from '../components/CTASection';
-import { Briefcase } from 'lucide-react';
 
 const pageFaqs = [
     { question: "¿Cuáles son los requisitos fundamentales para ser Partner?", answer: "Buscamos agencias de transformación digital, consultoras de TI o distribuidores de ERP con experiencia comprobable en el sector retail o logístico, y que cuenten con un equipo de implementación y mesa de ayuda propia." },
@@ -10,6 +10,24 @@ const pageFaqs = [
 ];
 
 export default function QuieroSerPartner() {
+    const formContainerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!formContainerRef.current) return;
+        if (formContainerRef.current.querySelector('script')) return;
+
+        const script = document.createElement('script');
+        script.dataset.b24Form = 'inline/11/cpxs2l';
+        script.dataset.skipMoving = 'true';
+        script.innerHTML = `(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];
+if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
+})(window,document,'https://cdn.bitrix24.es/b35633555/crm/form/loader_11.js');`;
+
+        formContainerRef.current.appendChild(script);
+    }, []);
+
     return (
         <main className="w-full">
             <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-[#110c22] text-white relative overflow-hidden">
@@ -41,38 +59,7 @@ export default function QuieroSerPartner() {
                             className="bg-[#1C1A27] border border-[#2C293F] p-8 rounded-[32px] shadow-2xl relative"
                         >
                             <h3 className="text-2xl font-bold text-white mb-6">Aplica al programa</h3>
-                            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-[#D4D2DF]">Nombre de tu Empresa / Consultora</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-[#3D3A50] bg-[#110c22] text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Ej. TechRetail Solutions" />
-                                </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <label className="text-sm font-medium text-[#D4D2DF]">Tu nombre</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-xl border border-[#3D3A50] bg-[#110c22] text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Nombre" />
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <label className="text-sm font-medium text-[#D4D2DF]">Email corporativo</label>
-                                        <input type="email" className="w-full px-4 py-3 rounded-xl border border-[#3D3A50] bg-[#110c22] text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="email@tucorreo.com" />
-                                    </div>
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-[#D4D2DF]">País de operación principal</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-[#3D3A50] bg-[#110c22] text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Ej. México" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-[#D4D2DF]">Tamaño de tu portafolio de clientes (aprox)</label>
-                                    <select className="w-full px-4 py-3 rounded-xl border border-[#3D3A50] bg-[#110c22] text-[#D4D2DF] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors appearance-none">
-                                        <option>Menos de 20 clientes</option>
-                                        <option>Entre 20 y 100 clientes</option>
-                                        <option>Más de 100 clientes activos</option>
-                                    </select>
-                                </div>
-                                
-                                <button className="w-full bg-primary hover:bg-[#e67319] text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary/25">
-                                    Enviar solicitud comercial <Briefcase size={18} />
-                                </button>
-                            </form>
+                            <div ref={formContainerRef} className="w-full min-h-[400px]"></div>
                         </motion.div>
                     </div>
                 </div>

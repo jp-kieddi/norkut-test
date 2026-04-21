@@ -13,8 +13,26 @@ export default function ChatWidget() {
         script.async = true;
         document.body.appendChild(script);
 
+        // Escuchar eventos de interacción emitidos por el iframe del Chatbot (kieddi)
+        const handleChatEvent = (event: MessageEvent) => {
+            // Verificamos si el iframe envía un evento de envío de mensaje. 
+            // Si recuerdas el nombre exacto del evento, puedes ajustar aquí las condiciones de la validación.
+            const isChatMessage = typeof event.data === 'string' 
+                ? (event.data.includes('message_sent') || event.data.includes('chat_message')) 
+                : (event.data?.type === 'message' || event.data?.event === 'message_sent');
+
+            if (isChatMessage && typeof window !== 'undefined' && window.fbq) {
+                window.fbq('trackCustom', 'ChatInteraction');
+            }
+        };
+
+        window.addEventListener('message', handleChatEvent);
+
         // No removemos el script en el cleanup para evitar que al cambiar de página
         // en la SPA el widget se vuelva a inyectar sobre elementos ya creados.
+        return () => {
+            window.removeEventListener('message', handleChatEvent);
+        };
     }, []);
 
     return null; // Este componente no renderiza nada visible, solo inyecta el script

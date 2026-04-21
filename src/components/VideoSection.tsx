@@ -106,7 +106,7 @@ export default function VideoSection() {
                             <iframe
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/ZK-rNEhJIDs?autoplay=1"
+                                src="https://www.youtube.com/embed/3C8j_qd19gA?autoplay=1"
                                 title="Norkut Video"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

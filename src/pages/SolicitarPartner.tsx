@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import FAQ from '../components/FAQ';
 import CTASection from '../components/CTASection';
-import { Send } from 'lucide-react';
 
 const pageFaqs = [
     { question: "¿Qué hace un Partner certificado de Norkut?", answer: "Nuestros Partners son expertos en implementación, consultoría de procesos y transformación digital en retail. Te ayudan a configurar Norkut adaptado exactamente a tus flujos operativos y a capacitar a tu equipo." },
@@ -10,6 +10,26 @@ const pageFaqs = [
 ];
 
 export default function SolicitarPartner() {
+    const formContainerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!formContainerRef.current) return;
+        
+        // Evitamos doble inyección del script en modo estricto de React
+        if (formContainerRef.current.querySelector('script')) return;
+
+        const script = document.createElement('script');
+        script.dataset.b24Form = 'inline/13/ytsm9j';
+        script.dataset.skipMoving = 'true';
+        script.innerHTML = `(function(w,d,u){
+var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+var h=d.getElementsByTagName('script')[0];
+if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
+})(window,document,'https://cdn.bitrix24.es/b35633555/crm/form/loader_13.js');`;
+
+        formContainerRef.current.appendChild(script);
+    }, []);
+
     return (
         <main className="w-full">
             {/* Header / Hero */}
@@ -42,43 +62,8 @@ export default function SolicitarPartner() {
                             className="bg-zinc-50 border border-zinc-200 p-8 rounded-[32px] shadow-sm relative"
                         >
                             <h3 className="text-2xl font-bold text-zinc-900 mb-6">Empieza el proceso</h3>
-                            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <label className="text-sm font-medium text-zinc-700">Nombre</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" placeholder="Tu nombre" />
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <label className="text-sm font-medium text-zinc-700">Apellido</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" placeholder="Tu apellido" />
-                                    </div>
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-zinc-700">Email corporativo</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" placeholder="nombre@empresa.com" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-zinc-700">Empresa / Comercio</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" placeholder="Nombre completo de la empresa" />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-zinc-700">Cantidad de Tiendas / POS</label>
-                                    <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-zinc-700">
-                                        <option>1 - 3 Tiendas</option>
-                                        <option>4 - 10 Tiendas</option>
-                                        <option>Más de 10 Tiendas</option>
-                                        <option>Franquicia nacional</option>
-                                    </select>
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-sm font-medium text-zinc-700">¿Qué desafío quieres resolver?</label>
-                                    <textarea rows={3} className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none" placeholder="Breve descripción de tus necesidades operativas..." />
-                                </div>
-
-                                <button className="w-full bg-primary hover:bg-[#e67319] text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary/25">
-                                    Solicitar conexión <Send size={18} />
-                                </button>
-                            </form>
+                            {/* Contenedor del Formulario Bitrix24 */}
+                            <div ref={formContainerRef} className="w-full min-h-[400px]"></div>
                         </motion.div>
                     </div>
                 </div>
