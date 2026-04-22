@@ -241,7 +241,7 @@ export default function Funcionalidades() {
                                     <div className="p-4 bg-orange-50 dark:bg-orange-500/5 border border-orange-100 dark:border-orange-500/20 rounded-xl flex items-start gap-3">
                                         <BrainCircuit className="text-[#F97A22] shrink-0 w-5 h-5 mt-0.5" />
                                         <div>
-                                            <span className="text-xs font-bold text-[#F97A22] uppercase tracking-wider block mb-1">IA Inteligente</span>
+                                            <span className="text-xs font-bold text-[#F97A22] uppercase tracking-wider block mb-1">Norkut IA</span>
                                             <p className="text-sm text-orange-900 dark:text-orange-200 leading-relaxed">{op.ia}</p>
                                         </div>
                                     </div>

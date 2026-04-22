@@ -11,6 +11,7 @@ const navLinks = [
     { name: 'Gestión Inteligente', href: '/gestion-inteligente' },
     { name: 'Funcionalidades', href: '/funcionalidades' },
     { name: 'Precios', href: '/precios' },
+    { name: 'Partners', href: '/quiero-ser-partner' },
 ];
 
 export default function Navbar() {

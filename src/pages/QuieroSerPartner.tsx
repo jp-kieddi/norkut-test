@@ -35,7 +35,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
             <section className="pt-32 pb-16 md:pt-48 md:pb-32 bg-[linear-gradient(180deg,#edf2f7_0px,#edf2f7_400px,#f6f5f5_1000px,#f6f5f5_100%)] dark:bg-none dark:bg-[#110c22] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-orange-50 to-transparent blur-[120px] opacity-20 pointer-events-none" />
                 <div className="hero-orb absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#e2ecf7] rounded-full blur-[120px] pointer-events-none opacity-80 dark:opacity-20" />
-                
+
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="max-w-4xl mx-auto text-center pt-10">
                         <motion.div
@@ -43,15 +43,10 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-[#1C1A27] border border-zinc-200 dark:border-white/10 shadow-sm mb-8">
-                                <span className="w-2 h-2 rounded-full bg-[#F97A22] animate-pulse" />
-                                <span className="text-xs font-black text-zinc-900 dark:text-white uppercase tracking-widest">
-                                    Sección Partners
-                                </span>
-                            </div>
-                            
+
+
                             <h1 className="text-5xl md:text-6xl lg:text-[70px] font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.05] mb-8">
-                                Construye con nosotros el <br className="hidden md:block"/>
+                                Construye con nosotros el <br className="hidden md:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97A22] to-orange-400">ecosistema del retail</span>
                             </h1>
 
@@ -66,7 +61,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                             </div>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <button 
+                                <button
                                     onClick={scrollToForm}
                                     className="w-full sm:w-auto bg-[#F97A22] text-white hover:bg-orange-600 hover:scale-105 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl shadow-orange-500/20 flex items-center justify-center gap-2 group"
                                 >
@@ -96,7 +91,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-[#9E9BAE] mb-10 leading-relaxed">
                                 Cada partner tiene acceso a un portal diseñado para operar y crecer dentro del ecosistema:
                             </p>
-                            
+
                             <ul className="space-y-6 mb-10">
                                 {[
                                     { text: "Visualización de clientes activos dentro de la plataforma", icon: MonitorSmartphone },
@@ -112,7 +107,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                                     </li>
                                 ))}
                             </ul>
-                            
+
                             <div className="inline-block bg-zinc-50 dark:bg-[#1C1A27] border border-zinc-200 dark:border-white/10 rounded-2xl p-5 shadow-sm">
                                 <p className="text-zinc-900 dark:text-white font-bold flex items-center gap-3">
                                     <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
@@ -130,7 +125,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                         >
                             {/* Decorative background glow */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#F97A22]/10 dark:bg-[#F97A22]/20 blur-[80px] rounded-full" />
-                            
+
                             {/* Abstract Mock Dashboard */}
                             <div className="relative z-10 w-full max-w-[340px] bg-white/80 dark:bg-[#2C293F]/60 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-[2rem] p-8 shadow-2xl shadow-black/5">
                                 <div className="flex items-center justify-between mb-8">
@@ -147,8 +142,8 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                                         <div key={i} className="w-full h-14 bg-white dark:bg-[#110c22] rounded-2xl border border-zinc-100 dark:border-white/5 flex items-center px-4 gap-4 shadow-sm">
                                             <div className="w-3 h-3 rounded-full bg-emerald-400" />
                                             <div className="flex-1 h-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
-                                                <motion.div 
-                                                    className="h-full bg-emerald-400" 
+                                                <motion.div
+                                                    className="h-full bg-emerald-400"
                                                     initial={{ width: 0 }}
                                                     whileInView={{ width: `${Math.random() * 40 + 40}%` }}
                                                     transition={{ duration: 1, delay: i * 0.2 }}
@@ -158,10 +153,10 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                                     ))}
                                 </div>
                             </div>
-                            
+
                             {/* Floating elements */}
-                            <motion.div 
-                                animate={{ y: [-15, 15, -15] }} 
+                            <motion.div
+                                animate={{ y: [-15, 15, -15] }}
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute top-16 right-8 lg:-right-8 bg-white dark:bg-[#2C293F]/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-zinc-100 dark:border-white/10 flex items-center gap-4 z-20"
                             >
@@ -221,7 +216,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
             {/* TIPOS DE PARTNERS */}
             <section className="py-24 md:py-32 bg-[#110c22] text-white relative overflow-hidden">
                 <div className="absolute top-[-50%] right-[-20%] w-[80%] h-[80%] bg-[#4c3185] rounded-full blur-[150px] pointer-events-none opacity-40" />
-                
+
                 <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Tipos de Partners</h2>
@@ -273,7 +268,7 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
             {/* VISIÓN & CTA PRE-FORM */}
             <section className="py-24 md:py-32 bg-white dark:bg-[#0e0a1b] text-center border-t border-zinc-100 dark:border-[#1C1A27] relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#F97A22]/5 to-purple-600/5 dark:from-[#F97A22]/10 dark:to-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
-                
+
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -309,8 +304,8 @@ if(h){h.parentNode.insertBefore(s,h);}else{d.head.appendChild(s);}
                             Accede al Portal de Partners y empieza a crecer.
                         </h2>
                     </div>
-                    
-                    <motion.div 
+
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
