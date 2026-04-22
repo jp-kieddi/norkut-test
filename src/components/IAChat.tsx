@@ -114,10 +114,10 @@ export default function IAChat() {
 
                             {/* Action Button inside chat */}
                             <div className="flex justify-end mt-4">
-                                <button className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[#9dbffc] hover:border-[#D16DFF] hover:bg-purple-50 dark:hover:bg-[#1e1633] transition-colors duration-300 shadow-none">
+                                <a href="https://auth.norkut-cloud.com/sign-up" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[#9dbffc] hover:border-[#D16DFF] hover:bg-purple-50 dark:hover:bg-[#1e1633] transition-colors duration-300 shadow-none">
                                     <span className="text-sm font-semibold bg-linear-to-r from-[#4FA9FF] to-[#D16DFF] bg-clip-text text-transparent">Probar ahora</span>
                                     <span className="bg-linear-to-r from-[#4FA9FF] to-[#D16DFF] bg-clip-text text-transparent text-base font-normal leading-none mb-[2px] ml-1">→</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

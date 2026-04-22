@@ -4,35 +4,121 @@ export default function Terms() {
             <section className="pt-32 pb-24 md:pt-48 md:pb-32 bg-white min-h-screen">
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-8">
-                        Términos de Servicio
+                        Términos y Condiciones
                     </h1>
                     <div className="prose prose-zinc max-w-none text-zinc-700 leading-relaxed space-y-6">
-                        <p className="font-medium text-lg text-zinc-500">Efectivo a partir de: 20 de Abril de 2026</p>
+                        <p className="font-medium text-lg text-zinc-500">Efectivo a partir de: 22 de Abril de 2026</p>
                         
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">1. Aceptación</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">1. ACEPTACIÓN DE LOS TÉRMINOS</h2>
                         <p>
-                            Al suscribirse, acceder o utilizar la plataforma Norkut y sus módulos adyacentes, usted y la entidad a la que representa ("Cliente" o "Tenant") acuerdan someterse legalmente a los siguientes Términos de Servicio.
+                            Al acceder y utilizar la plataforma Norkut, el usuario acepta estos Términos y Condiciones. Si no está de acuerdo, debe abstenerse de utilizar el servicio.
                         </p>
                         
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">2. Licencia de Software y Tokens</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">2. DESCRIPCIÓN DEL SERVICIO</h2>
                         <p>
-                            Norkut provee acceso de uso al software operacional en la nube basándose en esquemas SaaS. Los límites operacionales de cada plan (Tiendas, Tokens por POS adicional, SKUs activos) deben respetarse. Superar el límite establecido de SKUs activos incurrirá en el ascenso automático al plan comercial correspondiente bajo previo aviso.
+                            Norkut es una plataforma tecnológica que permite gestionar operaciones comerciales, incluyendo:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>ventas y punto de venta</li>
+                            <li>inventario</li>
+                            <li>clientes</li>
+                            <li>analítica e inteligencia artificial</li>
+                            <li>automatización de decisiones operativas</li>
+                            <li>gestión financiera y administrativa</li>
+                        </ul>
+                        <p>
+                            El servicio puede incluir funcionalidades automatizadas basadas en inteligencia artificial.
                         </p>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">3. Obligaciones y Uso Justo</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">3. USO DE LA PLATAFORMA</h2>
+                        <p>
+                            El usuario se compromete a:
+                        </p>
                         <ul className="list-disc pl-6 space-y-2">
-                            <li>El cliente es responsable del hardware de punto de venta (POS) y de la conectividad provista en su comercio.</li>
-                            <li>A pesar del modo offline, los terminales deben conectarse al servidor maestro de manera regular para sincronizar la facturación y la telemetría del modelo de Inteligencia Artificial.</li>
+                            <li>utilizar la plataforma de forma legal</li>
+                            <li>no manipular, interferir o vulnerar el sistema</li>
+                            <li>no utilizar la plataforma para actividades ilícitas</li>
+                            <li>proteger sus credenciales de acceso</li>
+                        </ul>
+                        <p>
+                            Norkut no se hace responsable por accesos no autorizados derivados de negligencia del usuario.
+                        </p>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">4. CUENTAS Y ACCESO</h2>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Cada usuario es responsable de su cuenta</li>
+                            <li>El acceso puede ser suspendido en caso de uso indebido</li>
+                            <li>Norkut puede limitar o restringir acceso por razones de seguridad o cumplimiento</li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">4. Partners y Terceros</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">5. DATOS Y PROPIEDAD</h2>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Los datos operativos generados por el usuario son propiedad del usuario</li>
+                            <li>Norkut puede procesar dichos datos para operar la plataforma</li>
+                            <li>Norkut puede procesar dichos datos para mejorar el servicio</li>
+                            <li>Norkut puede procesar dichos datos para generar inteligencia agregada y anonimizada</li>
+                        </ul>
                         <p>
-                            Los servicios de consultoría o implementación contratados a través un "Partner Certificado" de Norkut son acuerdos comerciales independientes celebrados entre su empresa y el Partner. Norkut provee garantías estrictamente sobre el desempeño de la plataforma Cloud y la inferencia neural.
+                            Norkut no venderá datos individuales identificables sin autorización.
                         </p>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">5. Terminación</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">6. INTELIGENCIA ARTIFICIAL</h2>
                         <p>
-                            El cliente puede cancelar su portal en el transcurso del actual ciclo de facturación. No se reembolsarán meses parciales, salvo mediante nuestra "Garantía de Devolución de 14 Días" aplicable desde la fecha o factura de inicio de contrato.
+                            El usuario reconoce que:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>la plataforma puede generar recomendaciones y acciones automatizadas</li>
+                            <li>dichas acciones se basan en datos disponibles y modelos probabilísticos</li>
+                            <li>el usuario mantiene responsabilidad final sobre decisiones críticas</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">7. DISPONIBILIDAD DEL SERVICIO</h2>
+                        <p>
+                            Norkut busca mantener alta disponibilidad, pero no garantiza:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>operación ininterrumpida</li>
+                            <li>ausencia total de errores</li>
+                        </ul>
+                        <p>
+                            Se podrán realizar mantenimientos programados o actualizaciones.
+                        </p>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">8. LIMITACIÓN DE RESPONSABILIDAD</h2>
+                        <p>
+                            Norkut no será responsable por:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>pérdidas indirectas o lucro cesante</li>
+                            <li>decisiones tomadas por el usuario basadas en la plataforma</li>
+                            <li>fallas externas (internet, electricidad, terceros)</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">9. FACTURACIÓN Y PAGOS</h2>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Los servicios pueden estar sujetos a planes pagos</li>
+                            <li>El incumplimiento de pagos puede resultar en suspensión</li>
+                            <li>Las condiciones específicas serán acordadas comercialmente</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">10. TERMINACIÓN</h2>
+                        <p>
+                            Norkut puede suspender o terminar el acceso si:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>se violan estos términos</li>
+                            <li>existe riesgo para la plataforma</li>
+                            <li>hay incumplimiento de pago</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">11. MODIFICACIONES</h2>
+                        <p>
+                            Norkut podrá actualizar estos términos en cualquier momento. El uso continuo implica aceptación de los cambios.
+                        </p>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">12. LEGISLACIÓN APLICABLE</h2>
+                        <p>
+                            Estos términos se rigen por las leyes aplicables en la jurisdicción correspondiente al usuario o a la operación del servicio.
                         </p>
                     </div>
                 </div>

@@ -79,11 +79,11 @@ const coreCards = [
 ];
 
 const technicalSpecs = [
-    { num: '01', title: "Inteligencia en el punto de venta", desc: "La plataforma genera vectores directamente desde la actividad del POS. La inteligencia empieza donde ocurre la acción.", icon: TerminalSquare },
-    { num: '02', title: "Vectorización de 4 bits", desc: "Inferencia eficiente, escalable y económicamente viable en entornos retail reales. Más velocidad. Menos costo. Mayor flexibilidad.", icon: Layers },
-    { num: '03', title: "Inferencia neural probada", desc: "El motor neural ya genera inferencia desde comportamiento operacional en vivo: stock, reposición, anomalías, demanda, logística.", icon: BrainCircuit },
-    { num: '04', title: "Infraestructura AWS multi-tenant", desc: "Arquitectura cloud ya funcionando, diseñada para soportar múltiples empresas, países y contextos operacionales.", icon: Globe2 },
-    { num: '05', title: "Disciplina Terraform", desc: "Infraestructura como código. Reproducible, gobernable y trazable.", icon: Code2 },
+    { num: '01', title: "Inteligencia en el punto de venta", subtitle: "La inteligencia comienza donde ocurre la operación", desc: "Norkut genera señales directamente desde la actividad del POS, eliminando latencia y permitiendo decisiones inmediatas.", icon: TerminalSquare },
+    { num: '02', title: "Vectorización optimizada (4 bits)", subtitle: "Más velocidad. Menos costo. Mayor escala", desc: "Procesamiento eficiente diseñado para entornos reales de retail, donde cada milisegundo y cada transacción cuentan.", icon: Layers },
+    { num: '03', title: " Inferencia operativa en tiempo real", subtitle: "Detecta lo que está pasando mientras está pasando", desc: "El motor analiza continuamente ventas, inventario, reposición, anomalías y demanda para generar decisiones accionables.", icon: BrainCircuit },
+    { num: '04', title: "Infraestructura AWS multi-tenant", subtitle: "Escala sin fricción", desc: "Arquitectura cloud diseñada para operar múltiples empresas, regiones y estructuras organizativas en paralelo, con aislamiento y eficiencia.", icon: Globe2 },
+    { num: '05', title: "Infraestructura como código (Terraform)", subtitle: "Control total, sin improvisación", desc: "Toda la infraestructura es reproducible, auditable y escalable, garantizando consistencia operativa en cualquier entorno.", icon: Code2 },
 ];
 
 const operationalDetails = [
@@ -96,14 +96,14 @@ const operationalDetails = [
             "Transferencias optimizadas entre tiendas",
             "Inventario sincronizado en tiempo real"
         ],
-        ia: "Norkut anticipa necesidades: cuándo comprar, cuánto mover y dónde ajustar stock para maximizar rotación."
+        ia: "Anticipa necesidades: qué comprar, cuándo y dónde mover inventario."
     },
     {
         title: "Ventas & POS",
         subtitle: "Atención ágil y continua.",
         icon: Receipt,
         items: [
-            "Punto de venta rápido, continuo y confiable",
+            "Punto de venta rápido y estable",
             "Operación híbrida (online/offline)",
             "Múltiples formas de pago integradas",
             "Control total de caja y turnos"
@@ -111,28 +111,28 @@ const operationalDetails = [
     },
     {
         title: "Gestión de Tiendas",
-        subtitle: "Escalabilidad centralizada.",
+        subtitle: "Control centralizado, ejecución distribuida.",
         icon: Store,
         items: [
-            "Configuración centralizada de tiendas y cajas",
-            "Control operativo en tiempo real",
-            "Estandarización de procesos"
+            "Configuración unificada de tiendas y cajas",
+            "Visibilidad operativa en tiempo real",
+            "⁠Procesos estandarizados en toda la red"
         ]
     },
     {
         title: "Marketing & Clientes",
-        subtitle: "Conversión y recurrencia.",
+        subtitle: "Convierte comportamiento en revenue.",
         icon: Users,
         items: [
             "Campañas basadas en comportamiento real",
             "Segmentación automática de clientes",
             "Personalización sin esfuerzo"
         ],
-        ia: "La plataforma detecta patrones y activa campañas automáticamente según el comportamiento del cliente."
+        ia: "Detecta patrones y activa campañas automáticamente según el comportamiento del cliente."
     },
     {
         title: "Finanzas & Administración",
-        subtitle: "Trazabilidad administrativa total.",
+        subtitle: "Cada número bajo control.",
         icon: Landmark,
         items: [
             "Conciliación automática de operaciones",
@@ -142,7 +142,7 @@ const operationalDetails = [
     },
     {
         title: "Franquicias & Holdings",
-        subtitle: "Gobierno corporativo multi-tenant.",
+        subtitle: "Gobierna la red sin perder agilidad.",
         icon: Building2,
         items: [
             "Visión consolidada de toda la operación",
@@ -170,13 +170,13 @@ export default function Funcionalidades() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
                         <div className="relative z-10">
                             <span className="text-[#F97A22] font-semibold text-sm mb-4 uppercase tracking-wider block">
-                                Funcionalidades
+                                Ecosistema Operacional
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-                                Donde la inteligencia se convierte en acción
+                                No es un software, es un sistema que opera tu negocio
                             </h1>
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-[#9E9BAE] font-medium">
-                                Norkut es el ecosistema donde proveedores, retailers y operadores se sincronizan en tiempo real. Gracias a la IA de Melé, transformamos la fricción operativa en un flujo continuo: desde la captura de la realidad en tienda hasta la ejecución financiera automática, sin intermediarios ni latencia.
+                                Todo lo que ocurre en tu operación, conectado en un solo flujo inteligente.
                             </p>
                         </div>
                         <motion.div
@@ -256,7 +256,7 @@ export default function Funcionalidades() {
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Características Técnicas</h2>
-                        <p className="text-zinc-600 dark:text-[#9E9BAE]">Arquitectura sólida y diseñada para escalar retail en ambientes reales.</p>
+                        <p className="text-zinc-600 dark:text-[#9E9BAE]">Arquitectura diseñada para operar retail real, en escala y en tiempo real.</p>
                     </div>
                     <div className="space-y-8">
                         {technicalSpecs.map((spec, i) => (
@@ -268,12 +268,15 @@ export default function Funcionalidades() {
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
                                 className="flex gap-6 border-b border-zinc-100 dark:border-[#2C293F] pb-8 last:border-0"
                             >
-                                <div className="text-[#F97A22] font-black text-3xl tabular-nums shrink-0 w-12">{spec.num}</div>
+                                <div className="text-[#F97A22] font-black text-3xl tabular-nums shrink-0 w-12">
+                                    <spec.icon size={32} />
+                                </div>
                                 <div>
-                                    <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2 flex items-center gap-2">
-                                        <spec.icon size={16} className="text-[#F97A22]" /> {spec.title}
-                                    </h4>
-                                    <p className="text-sm text-zinc-600 dark:text-[#9E9BAE] leading-relaxed">{spec.desc}</p>
+                                    <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                                        {spec.title}
+                                    </h2>
+
+                                    <p className="text-md text-zinc-600 dark:text-[#9E9BAE] leading-relaxed"><span className="font-bold text-zinc-900 dark:text-zinc-100">{spec.subtitle}</span>: {spec.desc}</p>
                                 </div>
                             </motion.div>
                         ))}

@@ -4,36 +4,101 @@ export default function Privacy() {
             <section className="pt-32 pb-24 md:pt-48 md:pb-32 bg-white min-h-screen">
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-8">
-                        Políticas de Privacidad
+                        Política de Privacidad
                     </h1>
                     <div className="prose prose-zinc max-w-none text-zinc-700 leading-relaxed space-y-6">
-                        <p className="font-medium text-lg text-zinc-500">Última actualización: 20 de Abril de 2026</p>
+                        <p className="font-medium text-lg text-zinc-500">Última actualización: 22 de Abril de 2026</p>
                         
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">1. Introducción</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">1. INFORMACIÓN QUE RECOPILAMOS</h2>
                         <p>
-                            En Norkut, valoramos profundamente la privacidad y seguridad de los datos operativos y personales de nuestros clientes. Esta política detalla cómo recopilamos, procesamos y protegemos la información generada a través del uso de nuestra plataforma SaaS, terminales POS y ecosistema de aplicaciones.
+                            Podemos recopilar:
                         </p>
-                        
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">2. Recopilación de Datos</h2>
                         <ul className="list-disc pl-6 space-y-2">
-                            <li><strong>Datos de la Cuenta:</strong> Nombre corporativo, credenciales de administrador, emails y datos de contacto de facturación.</li>
-                            <li><strong>Datos Operacionales:</strong> Transacciones de punto de venta, control de stock, movimientos de inventario y configuraciones empresariales enviadas activamente al sistema.</li>
-                            <li><strong>Datos Generados por IA:</strong> Vectores e inferencias operativas creadas a partir del uso rutinario del software (utilizadas estrictamente bajo mandato multi-tenant aislado).</li>
+                            <li>datos de registro (nombre, email, empresa)</li>
+                            <li>datos operativos (ventas, inventario, transacciones)</li>
+                            <li>datos técnicos (IP, dispositivo, uso de la plataforma)</li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">3. Uso de la Información</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">2. USO DE LA INFORMACIÓN</h2>
                         <p>
-                            La información procesada se utiliza de manera exclusiva para proveer los servicios pactados, generar recomendaciones operativas en su franquicia mediante nuestros modelos de IA transaccional y asegurar la continuidad y estabilidad del sistema bajo infraestructura AWS. 
+                            Utilizamos la información para:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>operar la plataforma</li>
+                            <li>mejorar funcionalidades</li>
+                            <li>generar inteligencia y automatización</li>
+                            <li>brindar soporte al usuario</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">3. INTELIGENCIA Y ANÁLISIS</h2>
+                        <p>
+                            Norkut puede:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>analizar datos operativos</li>
+                            <li>generar modelos predictivos</li>
+                            <li>utilizar información de forma agregada y anonimizada</li>
+                        </ul>
+                        <p>
+                            Nunca se compartirán datos sensibles identificables sin autorización.
                         </p>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">4. Aislamiento Multi-Tenant</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">4. COMPARTICIÓN DE DATOS</h2>
                         <p>
-                            Garantizamos estrictamente que la información comercial (inventario, márgenes, estrategias) almacenada en un <i>Tenant</i> (cliente/empresa) no cruza ni influye en las proyecciones o datos de otros clientes. Los datos son suyos y de su completa titularidad.
+                            Podemos compartir información con:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>proveedores tecnológicos (hosting, infraestructura)</li>
+                            <li>integraciones autorizadas (ej: marketplaces, sistemas externos)</li>
+                            <li>autoridades, si es requerido por ley</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">5. SEGURIDAD</h2>
+                        <p>
+                            Implementamos medidas razonables para proteger la información, incluyendo:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>control de accesos</li>
+                            <li>cifrado de datos</li>
+                            <li>monitoreo de actividad</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">6. ALMACENAMIENTO</h2>
+                        <p>
+                            Los datos pueden almacenarse en:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>servidores locales o internacionales</li>
+                            <li>infraestructura cloud segura</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">7. DERECHOS DEL USUARIO</h2>
+                        <p>
+                            El usuario puede:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>solicitar acceso a sus datos</li>
+                            <li>solicitar corrección</li>
+                            <li>solicitar eliminación (según limitaciones legales)</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">8. COOKIES</h2>
+                        <p>
+                            La plataforma puede utilizar cookies para:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>mejorar experiencia de usuario</li>
+                            <li>analizar uso de la plataforma</li>
+                        </ul>
+
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">9. CAMBIOS EN LA POLÍTICA</h2>
+                        <p>
+                            Podemos actualizar esta política. Se notificará cuando sea relevante.
                         </p>
 
-                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">5. Contacto</h2>
+                        <h2 className="text-2xl font-bold text-zinc-900 mt-12 mb-4">10. CONTACTO</h2>
                         <p>
-                            Para ejercer acceso, rectificación o eliminación profunda de bases de datos, contacte a su Gerente de Cuenta Norkut o envíe un correo electrónico a <strong>legal@norkut.com</strong>.
+                            Para temas de privacidad: <strong>soporte@norkut.com</strong>
                         </p>
                     </div>
                 </div>

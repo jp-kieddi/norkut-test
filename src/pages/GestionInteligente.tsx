@@ -7,30 +7,30 @@ import CTASection from '../components/CTASection';
 import IAConnectionAnimation from '../components/ui/IAConnectionAnimation';
 
 const meleCapabilities = [
-    { title: "En el Edge", desc: "Procesa la realidad antes de que suba a la nube, eliminando el ruido y detectando patrones en milisegundos.", icon: Zap },
-    { title: "En la Decisión", desc: "Combina señales en vivo con el contexto histórico (RAG) y las políticas comerciales de tu empresa para proponer acciones con sentido.", icon: Network },
-    { title: "En la Ejecución", desc: "No solo sugiere; dispara órdenes de compra, ajusta precios y lanza promociones automáticamente.", icon: Cpu }
+    { title: "En el Edge", desc: "Detecta lo que está pasando en tu operación en tiempo real, eliminando ruido y capturando patrones en milisegundos.", icon: Zap },
+    { title: "En la Decisión", desc: "Analiza lo que está pasando con el contexto completo de tu negocio para decidir qué hacer en cada momento.", icon: Network },
+    { title: "En la Ejecución", desc: "No solo recomienda: ejecuta órdenes, ajusta precios y activa promociones automáticamente dentro de tu operación.", icon: Cpu }
 ];
 
 const layers = [
-    { num: '01', title: "Inferencia continua", subtitle: "Captura pura", desc: "Generación automática de señales sobre ventas, inventario y comportamiento en tiempo real.", icon: Activity },
-    { num: '02', title: "Contexto operativo (RAG)", subtitle: "Relaciones seguras", desc: "Cada decisión se construye sobre contexto actualizado directamente desde la operación.", icon: Network },
-    { num: '03', title: "Decisiones accionables", subtitle: "Priorización inteligente", desc: "No solo detecta lo que pasa. Te dice exactamente qué hacer.", icon: Cpu, isMele: true },
-    { num: '04', title: "Ejecución integrada", subtitle: "Capacidad de actuar", desc: "Las acciones se ejecutan dentro del flujo: órdenes, reposición y activaciones.", icon: Zap },
-    { num: '05', title: "Ejecución integrada", subtitle: "Dinero y control", desc: "La plataforma mejora continuamente a medida que evoluciona tu operación.", icon: Database },
-    { num: '06', title: "Evolución Constante", subtitle: "Software que aprende", desc: "El sistema evoluciona según las necesidades de la red. Adaptamos flujos y reglas complejas a velocidad de mercado, reemplazando tus sistemas legacy.", icon: ServerCog }
+    { num: '01', title: "Detección en tiempo real", subtitle: "Captura pura", desc: "Genera señales automáticamente sobre ventas, inventario y comportamiento en cada punto de la operación.", icon: Activity },
+    { num: '02', title: "Decisiones con contexto completo", subtitle: "Relaciones seguras", desc: "Cada decisión se construye con información actualizada directamente desde tu operación, sin depender de reportes atrasados.", icon: Network },
+    { num: '03', title: "Acciones claras y ejecutables", subtitle: "Priorización inteligente", desc: "No solo detecta lo que pasa. Define qué hacer y lo ejecuta dentro del flujo operativo.", icon: Cpu, isMele: true },
+    { num: '04', title: "Ejecución automática", subtitle: "Capacidad de actuar", desc: "Las decisiones se convierten en acciones reales: órdenes, reposición y activaciones sin intervención manual.", icon: Zap },
+    { num: '05', title: "Impacto económico en tiempo real", subtitle: "Dinero y control", desc: "Cada acción se traduce en movimiento financiero: ventas, costos y márgenes controlados dentro de la plataforma.", icon: Database },
+    { num: '06', title: "Software que evoluciona contigo", subtitle: "Software que aprende", desc: "El sistema aprende de tu operación y adapta reglas y flujos automáticamente a medida que crece tu negocio.", icon: ServerCog }
 ];
 
 const differentiators = [
-    { title: "De Latencia a Tiempo Real", desc: "Deja de analizar lo que pasó ayer. Actúa sobre lo que está pasando ahora.", icon: ShieldCheck },
-    { title: "De Datos Brutos a Señales Semánticas", desc: "Menos ruido, menos costos de nube y mayor velocidad de reacción.", icon: FilterIcon },
-    { title: "De Recomendaciones a Resultados", desc: "Norkut no es un consultor; es un operador. Si el sistema decide una oferta, la oferta se aplica y se factura.", icon: Target }
+    { title: "De reportes tardíos a decisiones en tiempo real", desc: "Deja de analizar lo que pasó ayer. Actúa sobre lo que está pasando ahora.", icon: ShieldCheck },
+    { title: "De datos a decisiones claras", desc: "Menos ruido, menos dependencia de la nube y mayor velocidad de reacción.", icon: FilterIcon },
+    { title: "De recomendaciones a ejecución automática", desc: "Si el sistema decide una acción, se ejecuta dentro de tu operación y genera impacto real.", icon: Target }
 ];
 
 const kpis = [
-    { title: "Tasa de Inferencia → Acción", desc: "Ejecuciones reales sobre detecciones de IA" },
-    { title: "Tiempo Medio de Decisión", desc: "Reducción del ciclo desde el evento hasta su resolución" },
-    { title: "Eficiencia de Ejecución", desc: "Impacto directo en el revenue operativo" }
+    { title: "Velocidad de decisión a ejecución", desc: "Tiempo desde que ocurre un evento hasta que se ejecuta una acción real." },
+    { title: "Tiempo de respuesta operativo", desc: "Reducción del ciclo completo desde detección hasta resolución." },
+    { title: "Impacto directo en ventas y operación", desc: "Más ventas, mejor rotación y control del negocio en tiempo real." }
 ];
 
 // Helper Icon for differentiator
@@ -75,11 +75,11 @@ export default function GestionInteligente() {
                                 Gestión Inteligente by Melé
                             </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.1] mb-6">
-                                Donde la operación se convierte en inteligencia
+                                Donde tu operación se convierte en decisiones automáticas
                             </h1>
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-[#9E9BAE] font-medium leading-relaxed flex flex-col gap-3">
-                                <span>Norkut conecta proveedores, tiendas y operación en un solo flujo continuo.</span>
-                                <span>Captura lo que ocurre en tiempo real y lo transforma en decisiones automáticas, sin fricción ni latencia.</span>
+                                <span>Norkut conecta tiendas, proveedores y operación en un solo flujo continuo.</span>
+                                <span>Captura lo que ocurre en tiempo real y lo transforma en decisiones que se ejecutan automáticamente, sin fricción ni latencia.</span>
                             </p>
                         </motion.div>
                         <motion.div
@@ -99,10 +99,10 @@ export default function GestionInteligente() {
                 <div className="container mx-auto px-4 md:px-6 max-w-6xl">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-6">
-                            El Cerebro: <span className="text-[#F97A22]">Melé IA</span>
+                            El cerebro operativo: <span className="text-[#F97A22]">Melé IA</span>
                         </h2>
                         <p className="text-lg text-zinc-600 dark:text-[#9E9BAE]">
-                            No es un "bot", es el tejido conectivo de todas las operaciones.
+                            No es un bot. Es la capa que conecta, entiende y ejecuta toda tu operación.
                         </p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
@@ -212,8 +212,8 @@ export default function GestionInteligente() {
                         transition={{ duration: 0.8 }}
                         className="text-3xl md:text-5xl font-extrabold text-white tracking-tight"
                     >
-                        La operación deja de ser reactiva. <br className="hidden md:block" />
-                        <span className="text-[#F97A22]">Empieza a ser inteligente.</span>
+                        Dejas de reaccionar. <br className="hidden md:block" />
+                        <span className="text-[#F97A22]">Empiezas a operar con inteligencia.</span>
                     </motion.h2>
                 </div>
             </section>

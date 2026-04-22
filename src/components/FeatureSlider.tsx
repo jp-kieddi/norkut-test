@@ -257,41 +257,41 @@ const FinanceAnimation = () => {
 const featuresData = [
     {
         id: 'ops',
-        category: "Operación y Abastecimiento",
+        category: "OPERACIÓN Y ABASTECIMIENTO",
         title: "Control inteligente para escalar tu negocio",
-        description: "Esta herramienta facilita la administración diaria de tu comercio. Te permite registrar las compras a tus proveedores, realizar conteos periódicos para que tu inventario físico coincida siempre con el sistema y gestionar el envío de mercadería entre tus diferentes sucursales. El objetivo es que siempre cuentes con los productos necesarios para tus clientes.",
+        description: "Facilita la operación diaria de tu negocio sin complicaciones.\nRegistra compras a proveedores, controla tu inventario en tiempo real y gestiona el movimiento de mercancía entre sucursales.\n\nEvita quiebres de stock, reduce pérdidas y asegúrate de tener siempre lo que necesitas para vender.",
         Icon: Package,
         Animation: OpsAnimation,
     },
     {
         id: 'pos',
-        category: "Ventas y Punto de Venta",
-        title: "Atención ágil y ventas sin interrupciones",
-        description: "El punto de venta está diseñado para ofrecer velocidad y continuidad en la atención al cliente. Puedes procesar pagos con diversos métodos en una misma factura y emitir comprobantes electrónicos vinculados a ARCA. Una ventaja fundamental es su capacidad híbrida, la cual te permite seguir vendiendo y facturando con normalidad aunque te quedes temporalmente sin acceso a internet.",
+        category: "VENTAS Y PUNTO DE VENTA",
+        title: "Ventas rápidas y sin interrupciones",
+        description: "Procesa ventas de forma ágil y sin fricciones.\nAcepta múltiples métodos de pago en una misma factura y mantén tu operación activa incluso cuando falla la conexión.\n\nFunciona incluso en entornos con conectividad inestable, para que nunca dejes de vender.\n\nCumple con la normativa del SENIAT y adapta tu negocio a la facturación digital sin complicaciones.",
         Icon: ShoppingCart,
         Animation: PosAnimation,
     },
     {
         id: 'stores',
-        category: "Gestión de Tiendas",
-        title: "Control centralizado para todas tus sucursales",
-        description: "A medida que tu negocio crece, Norkut te acompaña. Esta sección te permite dar de alta nuevos puntos de venta, definir cuántas cajas operarán en cada local y gestionar sus accesos de manera centralizada. Toda la información de tus tiendas se mantiene consistente y estandarizada, permitiéndote tener un control total desde una sola cuenta administrativa.",
+        category: "GESTIÓN DE TIENDAS",
+        title: "Control total de todas tus sucursales",
+        description: "Centraliza la gestión de todas tus tiendas desde un solo lugar.\nDefine usuarios, controla accesos y mantén la información consistente en toda tu red.\n\nToma decisiones con visibilidad completa y mantén el control de tu operación sin perder agilidad.",
         Icon: Store,
         Animation: StoresAnimation,
     },
     {
         id: 'marketing',
-        category: "Marketing y Clientes",
-        title: "Conecta con tu público y aumenta tus ventas",
-        description: "Considera a tus clientes como el activo más valioso de tu empresa. A través de la hiper-personalización de datos, puedes conocer qué prefieren comprar y con qué frecuencia lo hacen. Con esta información, tienes la posibilidad de lanzar campañas de comunicación dirigidas específicamente a los intereses de cada grupo de clientes para aumentar tus ventas.",
+        category: "MARKETING Y CLIENTES",
+        title: "Conecta con tus clientes y vende más",
+        description: "Convierte tus datos en ventas.\nConoce qué compran tus clientes, con qué frecuencia y qué prefieren.\n\nLanza campañas dirigidas y promociones personalizadas para aumentar la recurrencia y el ticket promedio.",
         Icon: TrendingUp,
         Animation: MarketingAnimation,
     },
     {
         id: 'finance',
-        category: "Finanzas y Administración",
-        title: "Visibilidad y control total sobre tus números",
-        description: "Obtén un gobierno interno sólido de tu plataforma. Esta funcionalidad te permite conciliar los turnos de trabajo para verificar que el dinero en caja sea el correcto, visualizar resúmenes de tus movimientos bancarios y registrar todos los pagos realizados. De esta manera, mantienes la trazabilidad de cada centavo y conoces con exactitud tus márgenes de ganancia.",
+        category: "FINANZAS Y ADMINISTRACIÓN",
+        title: "Control total sobre tu dinero",
+        description: "Mantén el control de tu caja, bancos y movimientos en tiempo real.\nRealiza conciliaciones simples, registra todos los pagos y asegúrate de tener trazabilidad de cada transacción.\n\nCumple con los requisitos del SENIAT y mantén tu operación financiera organizada y transparente.",
         Icon: CircleDollarSign,
         Animation: FinanceAnimation,
     }
@@ -323,9 +323,14 @@ export default function FeatureSlider() {
             <div className="container mx-auto px-4 md:px-6">
 
                 {/* Section Title */}
-                <h2 className="text-4xl md:text-5xl lg:text-[42px] font-extrabold tracking-tight text-zinc-900 text-center mb-15 md:mb-12">
-                    Una plataforma, múltiples funcionalidades
-                </h2>
+                <div className="text-center mb-15 md:mb-12">
+                    <h2 className="text-4xl md:text-5xl lg:text-[42px] font-extrabold tracking-tight text-zinc-900 mb-4">
+                        Una sola plataforma para operar todo tu negocio
+                    </h2>
+                    <p className="text-lg md:text-xl text-zinc-600 font-medium">
+                        Ventas, inventario, clientes y finanzas en un solo lugar
+                    </p>
+                </div>
 
                 {/* Main Tabs Container */}
                 <div className="flex justify-center mb-8 max-w-6xl mx-auto">
@@ -372,7 +377,7 @@ export default function FeatureSlider() {
                                 <h3 className="text-3xl md:text-[34px] lg:text-[40px] font-extrabold tracking-tight text-zinc-900 mb-6 leading-[1.15]">
                                     {featuresData[activeIndex].title}
                                 </h3>
-                                <p className="text-[17px] text-zinc-600 font-medium leading-relaxed mb-8">
+                                <p className="text-[17px] text-zinc-600 font-medium leading-relaxed mb-8 whitespace-pre-line">
                                     {featuresData[activeIndex].description}
                                 </p>
                                 <div className="flex">
@@ -420,7 +425,7 @@ export default function FeatureSlider() {
 
                             {/* Mobile specific description and CTA placed below animation */}
                             <div className="md:hidden flex flex-col text-center mt-6">
-                                <p className="text-[15px] text-zinc-600 font-medium leading-relaxed mb-6">
+                                <p className="text-[15px] text-zinc-600 font-medium leading-relaxed mb-6 whitespace-pre-line">
                                     {featuresData[activeIndex].description}
                                 </p>
                                 <div className="flex justify-center">

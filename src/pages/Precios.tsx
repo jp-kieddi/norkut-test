@@ -31,10 +31,10 @@ const plans = [
         subtitle: 'Cadenas · Franquicias',
         price: '99',
         features: [
-            'hasta 3 tiendas + corporativo',
+            '3 tiendas + corporativo',
+            '3 POS + usuarios ilimitados',
             '2,000 SKUs por tienda',
-            'Señales custom',
-            'Usuarios ilimitados'
+            'Señales custom'
         ]
     },
     {
@@ -80,10 +80,11 @@ export default function Precios() {
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-                        Planes escalables para tu operación
+                        Empieza a operar con inteligencia
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Todos los planes incluyen: todos los módulos, usuarios ilimitados, infraestructura resuelta e inferencias priorizadas por impacto.
+                        Convierte cada venta, movimiento y decisión en una ventaja competitiva en tiempo real. Funciona incluso en entornos con conectividad inestable, para que nunca dejes de vender.
+
                     </p>
                 </div>
 
@@ -132,21 +133,28 @@ export default function Precios() {
                             <ArrowRight className="w-5 h-5" />
                         </div>
                         <h4 className="text-lg font-bold text-zinc-900 mb-2">Token por POS Adicional</h4>
-                        <p className="text-zinc-600 text-sm leading-relaxed">Cada punto de venta (caja) adicional dentro de una misma tienda requiere un token de $5/mes. La suscripción base incluye un POS por tienda. El crecimiento sin fisuras: abres nuevas cajas pagando un mínimo sin cambiar de plan de golpe.</p>
+                        <p className="text-zinc-600 text-sm leading-relaxed">Cada caja adicional dentro de una misma tienda se activa como un POS independiente.
+                            Tu plan incluye un POS base.
+                            Puedes escalar agregando nuevas cajas de forma simple, sin cambiar de plan.</p>
                     </div>
                     <div>
                         <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4">
                             <ArrowRight className="w-5 h-5" />
                         </div>
                         <h4 className="text-lg font-bold text-zinc-900 mb-2">¿Qué es una Señal Operativa?</h4>
-                        <p className="text-zinc-600 text-sm leading-relaxed">Es un evento inteligente que representa una oportunidad, riesgo o acción detectada por la IA dentro de la operación. Norkut solo te alerta cuando y donde tiene mayor impacto para tu retail.</p>
+                        <p className="text-zinc-600 text-sm leading-relaxed">Es un evento inteligente detectado por la IA dentro de tu operación.
+
+                            Puede representar una oportunidad, un riesgo o una acción necesaria.
+                            Norkut identifica dónde actuar y cuándo hacerlo para maximizar impacto.</p>
                     </div>
                     <div>
                         <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-4">
                             <ArrowRight className="w-5 h-5" />
                         </div>
                         <h4 className="text-lg font-bold text-zinc-900 mb-2">Límite de SKUs Activos</h4>
-                        <p className="text-zinc-600 text-sm leading-relaxed">Se contabilizan únicamente los artículos activos operando. El límite es de 2,000 SKUs para planes estándar. Al superarlo, pasas automáticamente a Enterprise sin bloqueos, mediante una transición consultiva.</p>
+                        <p className="text-zinc-600 text-sm leading-relaxed">Se contabilizan únicamente los productos activos en operación.
+
+                            Puedes gestionar tu catálogo con flexibilidad y escalar sin fricción a medida que crece tu negocio.</p>
                     </div>
                 </div>
             </div>
